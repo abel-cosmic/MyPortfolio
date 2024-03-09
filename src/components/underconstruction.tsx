@@ -31,6 +31,7 @@ export function UnderConstruction() {
               {badges.map((badge, index) => (
                 <Button
                   borderRadius="1rem"
+                  key={index}
                   className="bg-white dark:bg-black text-black dark:text-white  border-neutral-200 dark:border-slate-800"
                 >
                   <div className="m-1 text-xs">{badge}</div>

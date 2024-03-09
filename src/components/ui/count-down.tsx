@@ -25,10 +25,10 @@ const Countdown = ({ targetDate }: { targetDate: string }) => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
 return (
-    <div className="grid grid-cols-2 grid-cols-4 gap-2 justify-center">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 justify-center">
         {Object.keys(timeLeft).map((interval: string) => (
             <div key={interval} className="flex flex-col items-center gap-1">
                 <span className="text-sm font-medium tracking-wide text-gray-500 md:text-base dark:text-gray-400">
