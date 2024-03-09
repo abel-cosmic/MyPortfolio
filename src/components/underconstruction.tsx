@@ -8,7 +8,9 @@ import { Card, CardContent } from "./ui/card";
 import Countdown from "./ui/count-down";
 import { CheckIcon, Construction } from "lucide-react";
 import { socials } from "../../utils/objects/socials";
+import { Button } from "./ui/moving-border";
 export function UnderConstruction() {
+  const badges = ["Front End", "Back End", "Full Stack", "UI/UX", "DevOps"];
   return (
     <Card className="mx-auto w-fit  flex flex-col items-center justify-center border border-primary ">
       <CardContent>
@@ -22,8 +24,21 @@ export function UnderConstruction() {
             <h1 className="text-5xl lg:text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Under Construction
             </h1>
+            <div className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              Hey There 👋🏾 I am Abel Shibabaw
+            </div>
+            <div className="flex flex-row flex-wrap items-center w-full justify-center gap-2">
+              {badges.map((badge, index) => (
+                <Button
+                  borderRadius="1rem"
+                  className="bg-white dark:bg-black text-black dark:text-white  border-neutral-200 dark:border-slate-800"
+                >
+                  <div className="m-1 text-xs">{badge}</div>
+                </Button>
+              ))}
+            </div>
             <p className="mx-auto lg:max-w-[500px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              I am working on something awesome! Please Check back soon.
+              working on something awesome! Please Check back soon.
             </p>
           </div>
           <Countdown targetDate="2024-03-11T23:59:59" />
@@ -55,7 +70,7 @@ export function UnderConstruction() {
                 href={social.href}
                 target="_blank"
               >
-                <social.icon className="h-8 w-8" />
+                <social.icon className="h-8 w-8 lg:h-6 lg:w-6" />
               </Link>
             ))}
           </Card>
