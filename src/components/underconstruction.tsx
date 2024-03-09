@@ -7,7 +7,7 @@ import { ModeToggle } from "./toogle/theme";
 import { Card, CardContent } from "./ui/card";
 import Countdown from "./ui/count-down";
 import { CheckIcon, Construction } from "lucide-react";
-import {socials} from "../../utils/objects/socials";
+import { socials } from "../../utils/objects/socials";
 export function UnderConstruction() {
   return (
     <Card className="mx-auto w-fit  flex flex-col items-center justify-center border border-primary ">
@@ -18,11 +18,11 @@ export function UnderConstruction() {
             <ModeToggle />
           </div>
           <div className="space-y-2">
-            <Construction className="mx-auto h-12 w-12" />
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <Construction className="mx-auto h-20 w-20 " />
+            <h1 className="text-5xl lg:text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Under Construction
             </h1>
-            <p className="mx-auto max-w-[500px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="mx-auto lg:max-w-[500px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               I am working on something awesome! Please Check back soon.
             </p>
           </div>
@@ -47,7 +47,7 @@ export function UnderConstruction() {
               </p>
             </div>
           </div>
-          <div className="flex gap-4">
+          <Card className="flex gap-6 mt-6">
             {socials.map((social, index) => (
               <Link
                 key={index}
@@ -55,10 +55,10 @@ export function UnderConstruction() {
                 href={social.href}
                 target="_blank"
               >
-                <social.icon className="h-6 w-6" />
+                <social.icon className="h-8 w-8" />
               </Link>
             ))}
-          </div>
+          </Card>
         </div>
       </CardContent>
     </Card>
