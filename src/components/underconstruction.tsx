@@ -6,9 +6,10 @@ import Link from "next/link";
 import { ModeToggle } from "./toogle/theme";
 import { Card, CardContent } from "./ui/card";
 import Countdown from "./ui/count-down";
-import { CheckIcon, Construction } from "lucide-react";
 import { socials } from "../../utils/objects/socials";
 import { Button } from "./ui/moving-border";
+import { LuConstruction } from "react-icons/lu";
+import { IoCheckmark } from "react-icons/io5";
 export function UnderConstruction() {
   const badges = ["Front End", "Back End", "Full Stack", "UI/UX", "DevOps"];
   return (
@@ -20,7 +21,7 @@ export function UnderConstruction() {
             <ModeToggle />
           </div>
           <div className="space-y-2">
-            <Construction className="mx-auto h-20 w-20 " />
+            <LuConstruction className="mx-auto h-20 w-20 " />
             <h1 className="text-5xl lg:text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Under Construction
             </h1>
@@ -45,19 +46,19 @@ export function UnderConstruction() {
           <Countdown targetDate="2024-03-11T23:59:59" />
           <div className="max-w-[600px] w-full grid gap-2 justify-center">
             <div className="flex items-start gap-4">
-              <CheckIcon className="h-4 w-4 flex-shrink-0 text-gray-500 dark:text-gray-400" />
+              <IoCheckmark className="h-4 w-4 flex-shrink-0 text-gray-500 dark:text-gray-400" />
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Website design and layout completed.
               </p>
             </div>
             <div className="flex items-start gap-4">
-              <CheckIcon className="h-4 w-4 flex-shrink-0 text-gray-500 dark:text-gray-400" />
+              <IoCheckmark className="h-4 w-4 flex-shrink-0 text-gray-500 dark:text-gray-400" />
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Content and media integration in progress.
               </p>
             </div>
             <div className="flex items-start gap-4">
-              <CheckIcon className="h-4 w-4 flex-shrink-0 text-gray-500 dark:text-gray-400" />
+              <IoCheckmark className="h-4 w-4 flex-shrink-0 text-gray-500 dark:text-gray-400" />
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Final testing and optimization coming up next.
               </p>

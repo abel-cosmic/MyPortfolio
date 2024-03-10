@@ -1,35 +1,29 @@
-import {
-  FacebookIcon,
-  GithubIcon,
-  InstagramIcon,
-  Linkedin,
-  TwitterIcon,
-} from "lucide-react";
-
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 export const socials = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/abel-shibabaw-4b3b6125a/",
-    icon: Linkedin,
+    icon: FaLinkedin,
   },
   {
     name: "Github",
     href: "https://github.com/abel-cosmic",
-    icon: GithubIcon,
+    icon: FaGithub,
   },
   {
     name: "Twitter",
     href: "https://www.twitter.com/sarcisticlove",
-    icon: TwitterIcon,
+    icon: FaXTwitter,
   },
   {
     name: "Facebook",
     href: "https://www.facebook.com/abel.shibabaw/",
-    icon: FacebookIcon,
+    icon: FaFacebook,
   },
   {
     name: "Instagram",
     href: "https://www.instagram.com/__.abel_/",
-    icon: InstagramIcon,
+    icon: FaInstagram,
   },
 ];
