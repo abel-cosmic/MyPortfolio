@@ -8,9 +8,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import ProfileActionToggle from "@/components/toogle/profile-action-toggle";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import Image from "next/image";
-import gif from "/public/My Coding - Made with Clipchamp.gif";
 import {Button} from "@/components/ui/moving-border";
+import HeroCard from "@/components/card/hero";
 
 export default function Home() {
   const { setTheme, theme } = useTheme();
@@ -31,9 +30,9 @@ export default function Home() {
 
   return (
     <ScrollArea className="flex h-screen justify-center items-center flex-row w-full   gap-10 relative dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-      <div className="flex justify-center items-center flex-col md:flex-row w-full   gap-10 md:gap-4">
+      <div className="flex justify-center items-center flex-col md:flex-row w-full    gap-10 md:gap-4">
         <div className="flex flex-col w-full h-screen  justify-center items-start  ">
-          <div className="flex flex-col  w-full  h-full justify-center items-start px-10 py-44">
+          <div className="flex flex-col  w-full  h-full justify-center items-start px-10 md:px-28 py-44">
             <div className="flex flex-col  gap-3 w-full ">
               <div className="text-4xl font-bold leading-normal tracking-wide">
                 Abel Shibabaw
@@ -52,20 +51,7 @@ export default function Home() {
                   </Button>
                 ))}
               </div>
-              <div className="border border-primary/60 rounded-xl">
-                <div className="flex flex-row gap-2 py-2 pl-4">
-                  <div className="w-3 h-3 transition-all ease-linear bg-red-500 rounded-full hover:scale-125 hover:cursor-pointer"></div>
-                  <div className="w-3 h-3 transition-all ease-linear bg-yellow-500 rounded-full hover:scale-125 hover:cursor-pointer"></div>
-                  <div className="w-3 h-3 transition-all ease-linear bg-green-500 rounded-full hover:scale-125 hover:cursor-pointer"></div>
-                </div>
-                <Image
-                  src={gif}
-                  height="1000"
-                  width="1000"
-                  className="object-cover w-full rounded-b-xl h-96 max-md:h-60 md:h-52 group-hover/card:shadow-xl"
-                  alt="thumbnail"
-                />
-              </div>
+             <HeroCard/>
               <div className="text-gray-400  leading-relaxed tracking-wide">
                 I build pixel-perfect, engaging, and accessible digital
                 experiences.
@@ -96,7 +82,6 @@ export default function Home() {
           }
         />
       </div>
-
       <div className="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
     </ScrollArea>
   );
