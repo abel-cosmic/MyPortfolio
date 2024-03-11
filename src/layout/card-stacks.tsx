@@ -5,7 +5,7 @@ import { sections } from "../../utils/objects/setions";
 export const StickyScroll = () => {
   return (
     <div className="w-full">
-      <ScrollArea className="h-screen w-full hidden md:flex md:flex-col">
+      <ScrollArea className="h-screen md:pr-10 md:pt-20 w-full hidden md:flex md:flex-col">
         <div className="lg:flex  flex-col gap-2 w-full">
           <div className="flex flex-col  w-full  ">
             {sections.map((section, index) => (
