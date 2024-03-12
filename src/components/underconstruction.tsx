@@ -7,7 +7,7 @@ import { ModeToggle } from "./toogle/theme";
 import { Card, CardContent } from "./ui/card";
 import Countdown from "./ui/count-down";
 import { socials } from "../../utils/objects/socials";
-import { Button } from "./ui/moving-border";
+import { BorderButton } from "./ui/moving-border";
 import { LuConstruction } from "react-icons/lu";
 import { IoCheckmark } from "react-icons/io5";
 export function UnderConstruction() {
@@ -30,13 +30,13 @@ export function UnderConstruction() {
             </div>
             <div className="flex flex-row flex-wrap items-center w-full justify-center gap-2">
               {badges.map((badge, index) => (
-                <Button
+                <BorderButton
                   borderRadius="1rem"
                   key={index}
                   className="bg-white dark:bg-black text-black dark:text-white  border-neutral-200 dark:border-slate-800"
                 >
                   <div className="m-1 text-xs">{badge}</div>
-                </Button>
+                </BorderButton>
               ))}
             </div>
             <p className="mx-auto lg:max-w-[500px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
