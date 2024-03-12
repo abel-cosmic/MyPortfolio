@@ -8,7 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import ProfileActionToggle from "@/components/toogle/profile-action-toggle";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import {Button} from "@/components/ui/moving-border";
+import {BorderButton} from "@/components/ui/moving-border";
 import HeroCard from "@/components/card/hero";
 
 export default function Home() {
@@ -42,13 +42,13 @@ export default function Home() {
               </div>
               <div className="flex flex-row flex-wrap items-center w-full justify-center md:justify-start gap-2">
                 {badges.map((badge, index) => (
-                  <Button
+                  <BorderButton
                     borderRadius="1rem"
                     key={index}
                     className="bg-white dark:bg-black text-black dark:text-white  border-neutral-200 dark:border-slate-800"
                   >
                     <div className="m-1 text-xs">{badge}</div>
-                  </Button>
+                  </BorderButton>
                 ))}
               </div>
              <HeroCard/>
