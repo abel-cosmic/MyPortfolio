@@ -21,7 +21,7 @@ export default function Home() {
     if (theme == "light") setDarkMode(darkMode);
   };
   useEffect(toggleTheme, [darkMode]);
-  useEffect(configTheme, [theme, darkMode]);
+  useEffect(configTheme, []);
 
   return (
     <ScrollArea className="relative dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] h-screen">
