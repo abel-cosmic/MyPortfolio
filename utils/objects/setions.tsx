@@ -1,29 +1,27 @@
+import { Database, FolderKanban, Webhook } from "lucide-react";
 import { IoCheckmark } from "react-icons/io5";
 
 export const experience = [
   {
+    title: " Student Parliament President",
+    icon: <FolderKanban className="w-4 h-4" />,
+    location: "Hope Enterprise University | volunteer",
+    timeline: "Oct 21 - 2023",
+    content: `The individual effectively led the student parliament, improving student life and communication with the university...`,
+  },
+  {
     title: "Software Engineer",
-    location: "Micro Sun and Solutions",
+    icon: <Webhook className="w-4 h-4" />,
+    location: "Micro Sun and Solutions | remote ",
     timeline: "Aug 30 - Present",
-    project: "E-commerce Web App: Digital Mekato",
     content: `The individual significantly accelerated the development of the online store by 45% by implementing smart ...`,
-    techstack: ["Front End", "Back End"],
   },
   {
     title: "Software Engineer ",
-    location: "Peace Technology",
+    icon: <Database className="w-4 h-4" />,
+    location: "Peace Technology | remote",
     timeline: "Jan 30 - Present",
-    project: "E-commerce Web Dashboard for Ethiochef",
     content: `  The individual played a key role in establishing secure and efficient client-server communication for an...`,
-    techstack: [, "Back End", "Front End", "Full stack"],
-  },
-  {
-    title: " Student Parliament President",
-    location: "Hope Enterprise University",
-    timeline: "Oct 21 - 2023",
-    project: "Vice President for three semesters | President for one Semester",
-    content: `The individual effectively led the student parliament, improving student life and communication with the university...`,
-    techstack: ["Leadership", "President", "Vice President"],
   },
 ];
 export const sections = [

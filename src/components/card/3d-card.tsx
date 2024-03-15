@@ -7,7 +7,7 @@ import {CardContainer, CardItem} from '../ui/acertinity-card'
 
 export function ThreeDCardDemo() {
   return (
-    <CardContainer className="shadow-xl inter-var shadow-black/40 rounded-b-xl lg:w-[30rem] mx-auto">
+    <CardContainer className="shadow-xl inter-var shadow-black/40 rounded-b-xl w-[35rem] h-full">
       <CardItem
         className="w-full  border dark:border-black/[0.2] border-black/[0.1] rounded-xl dark:bg-primary "
         translateZ="100"
@@ -21,7 +21,7 @@ export function ThreeDCardDemo() {
           src={'/My Coding - Made with Clipchamp.gif'}
           height="1000"
           width="1000"
-          className="object-cover w-full rounded-b-xl lg:h-96 h-60 group-hover/card:shadow-xl"
+          className="object-cover w-full h-full rounded-b-xl  group-hover/card:shadow-xl"
           alt="thumbnail"
         />
       </CardItem>
