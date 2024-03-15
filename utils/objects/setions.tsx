@@ -29,22 +29,12 @@ export const experience = [
 export const sections = [
   {
     content: (
-      <p>
-        I'm <b className="text-primary"> Abel Shibabaw</b>, a software engineer
-        based in <b className="text-primary"> Addis Ababa</b> over{" "}
-        <b className="text-primary">3+ years</b> of experience, passionate about
-        leveraging technology to solve real-world problems. Specializing in{" "}
-        <b className="text-primary">full-stack </b>development, I bring a blend
-        of creativity and technical expertise to develop scalable, efficient
-        applications. With a background in{" "}
-        <b className="text=primary"> computer science </b>from{" "}
-        <b className="text-primary">Hope Enterprise University College</b>, my
-        experience spans e-commerce web applications, dashboard development, and
-        leadership roles in academic settings. I thrive in collaborative
-        environments, where I can contribute to{" "}
-        <b className="text-primary"> innovative solutions </b> and continuous
-        improvement. Explore my work and connect with me to discover how we can
-        create impactful technology together
+      <p className="my-20">
+        <b className="text-primary">Abel Shibabaw</b>, a software engineer from{" "}
+        <b className="text-primary">Addis Ababa</b>, with{" "}
+        <b className="text-primary">3+ years</b> experience. Specializing in{" "}
+        <b className="text-primary">full-stack</b> development, passionate about
+        innovative solutions. Let's create impactful technology together.
       </p>
     ),
   },
@@ -128,3 +118,6 @@ export const projects = [
     ],
   },
 ];
+
+export const badges = ["Front End", "Back End", "Full Stack", "UI/UX"];
+export const sentence = "From Design to Code with Abel Shibabaw";
