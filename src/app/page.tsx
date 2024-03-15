@@ -1,6 +1,6 @@
 "use client";
 import { Spotlight } from "@/components/ui/spotlight";
-import { UnderConstruction } from "@/components/underconstruction"
+import { UnderConstruction } from "@/components/underconstruction";
 import { StickyScroll } from "@/layout/card-stacks";
 import Link from "next/link";
 import { socials } from "../../utils/objects/socials";
@@ -8,7 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import ProfileActionToggle from "@/components/toogle/profile-action-toggle";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import {BorderButton} from "@/components/ui/moving-border";
+import { BorderButton } from "@/components/ui/moving-border";
 import HeroCard from "@/components/card/hero";
 
 export default function Home() {
@@ -25,11 +25,14 @@ export default function Home() {
   useEffect(toggleTheme, [darkMode]);
   useEffect(configTheme, []);
 
-
   const badges = ["Front End", "Back End", "Full Stack", "UI/UX", "DevOps"];
 
   return (
-    <UnderConstruction/>
+    <main className="flex h-screen justify-center items-center flex-row w-full lg:px-28  px-4 gap-4 relative dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+      <div className="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" />
+      <UnderConstruction />
+    </main>
     // <ScrollArea className="flex h-screen justify-center items-center flex-row w-full   gap-10 relative dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
     //   <div className="flex justify-center items-center flex-col md:flex-row w-full    gap-10 md:gap-4">
     //     <div className="flex flex-col w-full h-screen  justify-center items-start  ">
