@@ -30,7 +30,7 @@ export default function Home() {
       <Hero />
       <ExperienceSection />
       <Spotlight className="-top-20 left-10 md:left-60 md:-top-20" />
-      <div className="fixed top-4 right-10 flex gap-2 items-center z-50">
+      <div className="fixed top-2 right-4 flex gap-2 items-center z-50">
         <ProfileActionToggle
           toggleState={darkMode}
           handleOnToggle={(toggleState: boolean) =>

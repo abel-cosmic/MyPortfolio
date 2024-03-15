@@ -13,24 +13,24 @@ import { IoCheckmark } from "react-icons/io5";
 export const experience = [
   {
     title: " Student Parliament President",
-    icon: <FolderKanban className="w-4 h-4" />,
+    icon: <FolderKanban className="w-4 h-4 md:w-10 md:h-10" />,
     location: "Hope Enterprise University | volunteer",
     timeline: "Oct 21 - 2023",
-    content: `The individual effectively led the student parliament, improving student life and communication with the university...`,
+    content: `In a previous role, I served as Vice President for three semesters and as President for one semester, leading the student parliament to improve student life and enhance communication with the university administration. I showed a commitment to personal and professional growth through adaptive leadership, successfully balancing academic commitments with leadership responsibilities, and fostering a collaborative environment.`,
   },
   {
     title: "Software Engineer",
-    icon: <Webhook className="w-4 h-4" />,
+    icon: <Webhook className="w-4 h-4 md:w-10 md:h-10" />,
     location: "Micro Sun and Solutions | remote ",
     timeline: "Aug 30 - Present",
-    content: `The individual significantly accelerated the development of the online store by 45% by implementing smart ...`,
+    content: `I have  developed an online store was significantly accelerated by 45% by implementing smart systems for managing technical aspects and integrating user-friendly features to ensure a seamless shopping experience. Additionally, the Shadcn toolkit was employed to boost the website's appearance and performance, enhancing the overall digital presence of the Digital Mekato Website`,
   },
   {
     title: "Software Engineer ",
-    icon: <Database className="w-4 h-4" />,
+    icon: <Database className="w-4 h-4 md:w-10 md:h-10" />,
     location: "Peace Technology | remote",
     timeline: "Jan 30 - Present",
-    content: `  The individual played a key role in establishing secure and efficient client-server communication for an...`,
+    content: `  A secure and optimized e-commerce web dashboard was developed by me , featuring robust client-server communication with enhanced security measures. The  dashboard that I made was created using React with TypeScript, and incorporated the Shadcn UI Component library for improved user interface elements. The project emphasized collaborative problem-solving and involved regular code reviews to maintain high-quality code standards. This work contributed to the Ethiochef Admin Website`,
   },
 ];
 export const sections = [
