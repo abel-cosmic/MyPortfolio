@@ -12,7 +12,7 @@ export const ExperienceSection = () => {
   return (
     <div className="w-full h-screen ">
       <div className="flex flex-col items-center gap-4  w-full z-50 py-10 ">
-        <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-3xl leading-snug tracking-wider  backdrop-blur-2xl w-full">
+        <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-full">
           My Experience
         </div>
         <div className="flex flex-col gap-4 lg:gap-0 md:gap-10  w-full lg:pr-2 lg:pl-1 items-center">
@@ -43,11 +43,10 @@ export const ExperienceSection = () => {
                     index % 2 === 0 ? "flex-row" : "flex-row-reverse"
                   }`}
                 >
-                  <BorderButton
-                    borderRadius="4rem"
-                    className="p-3 md:p-6 text-primary dark:bg-transparent  dark:border-white border-slate-200 bg-white rounded-full"
-                  >
-                    {data.icon}
+                  <BorderButton borderRadius="4rem">
+                    <div className="p-3 md:p-6 text-primary dark:bg-transparent  dark:border-white border-slate-200 bg-white rounded-full">
+                      {data.icon}
+                    </div>
                   </BorderButton>
                   <div className="backdrop-blur-3xl bg-primary/5 p-2 max-md:hidden text-[10px] tracking-wider ">
                     {data.timeline}

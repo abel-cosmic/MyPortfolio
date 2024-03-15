@@ -22,7 +22,7 @@ const FloatingNavBar = ({
     <div className="hover:scale-105 fixed   z-50 bottom-10 left-4 transition-all  lg:left-[38%] md:left-1/3 ease-linear">
       <CardContainer className="max-md:w-full ">
         <CardItem
-          className={`glass-container bg-white dark:bg-black/30 bg-opacity-25 backdrop-blur-2xl border-2 max-md:border-b-0 max-md:pt-4   rounded-full  max-md:w-full max-md:items-center max-md:justify-center max-md:scale-0 shadow-xl flex flex-row gap-4 py-2 px-3`}
+          className={`glass-container bg-white dark:bg-transparent bg-opacity-25 backdrop-blur-2xl border-2 max-md:border-b-0 max-md:pt-4   rounded-full  max-md:w-full max-md:items-center max-md:justify-center max-md:scale-0 shadow-xl flex flex-row gap-4 py-2 px-3`}
         >
           {menus.map((menu) => (
             <TooltipProvider key={menu.link}>
