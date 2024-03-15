@@ -1,4 +1,13 @@
-import { Database, FolderKanban, Webhook } from "lucide-react";
+import {
+  Database,
+  DatabaseBackup,
+  FolderKanban,
+  Home,
+  LampDesk,
+  PanelsTopLeft,
+  SmartphoneNfc,
+  Webhook,
+} from "lucide-react";
 import { IoCheckmark } from "react-icons/io5";
 
 export const experience = [
@@ -119,3 +128,30 @@ export const projects = [
 
 export const badges = ["Front End", "Back End", "Full Stack", "UI/UX"];
 export const sentence = "From Design to Code with Abel Shibabaw";
+export const menus = [
+  {
+    icons: <Home className="w-4 h-4" />,
+    tip: "Home",
+    link: "home",
+  },
+  {
+    icons: <DatabaseBackup className="w-4 h-4 text-primary" />,
+    tip: "About",
+    link: "about",
+  },
+  {
+    icons: <PanelsTopLeft className="w-4 h-4 text-primary" />,
+    tip: "Project",
+    link: "projects",
+  },
+  {
+    icons: <LampDesk className="w-4 h-4 text-primary" />,
+    tip: "Skills",
+    link: "skills",
+  },
+  {
+    icons: <SmartphoneNfc className="w-4 h-4 text-primary" />,
+    tip: "Contact",
+    link: "contact",
+  },
+];

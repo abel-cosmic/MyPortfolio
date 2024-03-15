@@ -1,3 +1,4 @@
+"use client"
 import { SkillsBadge } from "@/components/badges/SkillBadge";
 import { SubTitle } from "./Subtitle";
 import { Button } from "@/components/ui/button";
@@ -43,12 +44,12 @@ const Hero = () => {
               </BorderButton>
             ))}
           </div>
-          <div className="flex flex-row gap-4 w-full md:pr-6 md:px-0 px-6">
-            <Button className="w-full rounded-full py-6 flex flex-row gap-2 text-md">
+          <div className="flex flex-row gap-4  w-full md:pr-6 md:px-0 px-6">
+            <Button className="w-full md:w-1/3 rounded-full py-6 flex flex-row gap-2 text-md">
               GitHub <FaGithub className="w-6 m-0 h-6" />
             </Button>
             <Button
-              className="w-full rounded-full py-6 flex flex-row gap-2 text-md"
+              className="w-full md:w-1/3 rounded-full py-6 flex flex-row gap-2 text-md"
               variant={"outline"}
             >
               LinkedIn <FaLinkedin className="w-6 m-0 h-6" />
