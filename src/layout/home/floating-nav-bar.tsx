@@ -51,4 +51,4 @@ const FloatingNavBar = ({
   );
 };
 
-export default dynamic(() => Promise.resolve(FloatingNavBar), { ssr: false });
+export default FloatingNavBar;
