@@ -15,7 +15,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "lucide-react";
 import { Contact } from "@/components/contact";
 import dynamic from "next/dynamic";
-import {GoSun,GoMoon} from "react-icons/go";
+import { GoSun, GoMoon } from "react-icons/go";
+import { TabsDemo } from "@/components/tabs/projects-tab";
 const Home = () => {
   const { setTheme, theme } = useTheme();
   const [isDarkMode, setIsDarkMode] = useState(() => theme === "dark");
@@ -38,14 +39,24 @@ const Home = () => {
       <Hero />
       <SkillsSection skillIcons={skillIcons} />
       <ExperienceSection />
+      <EducationSection />
       <Button className="w-fit flex gap-2 flex-row mx-auto my-10 ">
         View Full Resume <Link className="w-4 h-4" />
       </Button>
-      <EducationSection />
+      <TabsDemo />
       <Spotlight className="-top-20 left-10 md:left-60 md:-top-20" />
       <div className="fixed top-6 right-6 flex gap-2 items-center z-50">
-        <Button onClick={toggleTheme} variant={"outline"} size={"menuicon"} className="flex items-center justify-center p-3 bg-white dark:bg-black rounded-full">
-          {isDarkMode ? <GoSun className="w-6 h-6 text-primary" /> : <GoMoon className="text-primary w-6 h-6" />}
+        <Button
+          onClick={toggleTheme}
+          variant={"outline"}
+          size={"menuicon"}
+          className="flex items-center justify-center p-3 bg-white dark:bg-black rounded-full"
+        >
+          {isDarkMode ? (
+            <GoSun className="w-6 h-6 text-primary" />
+          ) : (
+            <GoMoon className="text-primary w-6 h-6" />
+          )}
         </Button>
       </div>
       <FloatingNavBar menus={menus} />

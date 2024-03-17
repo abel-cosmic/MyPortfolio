@@ -12,9 +12,9 @@ import Image from "next/image";
 
 export function Contact() {
   return (
-    <section className="bg-white dark:bg-black py-12 md:py-16 h-screen  flex flex-col items-center justify-center">
+    <section className="bg-white dark:bg-black py-12 md:py-16 h-fit  flex flex-col items-center justify-center">
       <div className="container px-4 flex flex-col gap-4">
-        <div className="w-fit mx-auto px-10 lg:px-20 py-32 rounded-3xl bg-primary/10  backdrop-blur-3xl flex flex-col md:flex-row gap-4 lg:gap-10 justify-center items-center ">
+        <div className="w-fit mx-auto px-10 lg:px-20 py-32 rounded-3xl flex flex-col md:flex-row gap-4 lg:gap-10 justify-center items-center ">
           <header className="text-center flex flex-col gap-4 items-center">
             <Image
               src="/logo-dark.ico"
