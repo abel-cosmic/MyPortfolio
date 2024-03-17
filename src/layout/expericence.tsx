@@ -1,6 +1,6 @@
 "use client";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { experience, projects, sections } from "../../utils/objects/setions";
+import { experience } from "../../utils/objects/setions";
 import { ExternalLink, Link, MoveUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BorderButton } from "@/components/ui/moving-border";

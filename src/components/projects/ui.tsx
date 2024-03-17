@@ -13,7 +13,7 @@ const UiUx = () => {
     },
   ];
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-fit md:p-10 mx-auto border border-red-500 items-center justify-center">
       {Uiprojects.map((projects, index) => (
         <ProjectCard
           key={index}

@@ -18,8 +18,8 @@ import UiUx from "../projects/ui";
 
 export function TabsDemo() {
   return (
-    <Tabs defaultValue="ui" className="w-full mx-auto">
-      <TabsList className="grid w-full grid-cols-4">
+    <Tabs defaultValue="ui" className="w-full flex flex-col items-center justify-center">
+      <TabsList className="grid w-4/5 md:w-1/2 md:mx-auto grid-cols-4 rounded-full">
         <TabsTrigger value="ui">
             <div>UI/UX</div>
         </TabsTrigger>
@@ -33,7 +33,7 @@ export function TabsDemo() {
             <div>Full-Stack</div> 
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="ui">
+      <TabsContent value="ui" className="w-fit">
         <UiUx/>
       </TabsContent>
       <TabsContent value="front">
