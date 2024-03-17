@@ -1,18 +1,12 @@
 "use client";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { experience } from "../../utils/objects/setions";
-import { ExternalLink, Link, MoveUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { BorderButton } from "@/components/ui/moving-border";
-import { Card } from "@/components/ui/card";
-import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
 
 export const ExperienceSection = () => {
   return (
     <div className="w-full  ">
       <div className="flex flex-col items-center gap-4  w-full z-50 pb-10  ">
-        <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-full">
+        <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-fit rounded-full">
           My Experience
         </div>
         <div className="flex flex-col gap-4 lg:gap-0 md:gap-10  w-full lg:pr-2 lg:pl-1 items-center">

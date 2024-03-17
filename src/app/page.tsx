@@ -16,6 +16,7 @@ import { Link } from "lucide-react";
 import { Contact } from "@/components/contact";
 import dynamic from "next/dynamic";
 import { GoSun, GoMoon } from "react-icons/go";
+import { RiInboxArchiveLine } from "react-icons/ri";
 import { TabsDemo } from "@/components/tabs/projects-tab";
 const Home = () => {
   const { setTheme, theme } = useTheme();
@@ -44,6 +45,9 @@ const Home = () => {
         View Full Resume <Link className="w-4 h-4" />
       </Button>
       <TabsDemo />
+      <Button className="w-fit flex gap-2 flex-row mx-auto my-10 ">
+        Projects Archive <RiInboxArchiveLine className="w-4 h-4" />
+      </Button>
       <Spotlight className="-top-20 left-10 md:left-60 md:-top-20" />
       <div className="fixed top-6 right-6 flex gap-2 items-center z-50">
         <Button

@@ -8,14 +8,15 @@ const UiUx = () => {
       image: "/projects/Frame 1618873118.png",
       title: "Prepmaster Figma Design",
       description:
-        "The Prepmaster Figma Design project developed a tailored UI/UX for an educational platform, focusing on user needs and seamless interaction. Utilizing Figma's latest tools,Me and my team created an intuitive, accessible, and visually appealing interface across all screens, culminating in an interactive prototype that enhances stakeholder engagement and user experience. This effort reflects a dedication to innovative, user-centered design catering to both learners and educators.",
+        "Using Figma's tools, the Prepmaster Figma Design project created a user-centric UI/UX for an educational platform with an easily navigable, aesthetically pleasing interface. The outcome is an interactive prototype that improves user experience and increases stakeholder engagement, showcasing a dedication to creative design for educators and students alike.",
       techStacks: ["Figma", "UI/UX", "Design"],
     },
   ];
   return (
-    <div className="flex flex-col gap-4 w-fit md:p-10 mx-auto border border-red-500 items-center justify-center">
+    <div className="md:w-2/3 w-full flex flex-col gap-10 h-fit">
       {Uiprojects.map((projects, index) => (
         <ProjectCard
+          index={index}
           key={index}
           title={projects.title}
           description={projects.description}

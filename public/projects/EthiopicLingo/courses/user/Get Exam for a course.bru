@@ -1,0 +1,15 @@
+meta {
+  name: Get Exam for a course
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{apiURL}}/courses/exam/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: JWT
+}

@@ -1,12 +1,9 @@
 "use client";
-import { SkillsBadge } from "@/components/badges/SkillBadge";
 import { SubTitle } from "./Subtitle";
 import { Button } from "@/components/ui/button";
-import { badges, sentence, skills } from "../../../utils/objects/setions";
+import {  sentence, skills } from "../../../utils/objects/setions";
 import { TextGenerateEffect } from "@/components/acertinity/text-generator";
 import { ThreeDCardDemo } from "@/components/card/3d-card";
-import { socials } from "../../../utils/objects/socials";
-import Link from "next/link";
 import { BorderButton } from "@/components/ui/moving-border";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 

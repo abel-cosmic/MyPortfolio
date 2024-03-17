@@ -5,7 +5,7 @@ export const EducationSection = () => {
   return (
     <div className="w-full">
       <div className="flex flex-col items-center gap-4  w-full z-50  ">
-        <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-full">
+        <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-fit rounded-full">
           My Education
         </div>
         <div className="flex flex-col gap-4  md:gap-4  w-fit  items-center justify-center   md:w-full md:flex lg:flex-row">
