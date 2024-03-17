@@ -9,8 +9,8 @@ export const EducationSection = () => {
           My Education
         </div>
         <div className="flex flex-col gap-10  w-full md:w-1/2  items-center justify-center mx-auto">
-          <div className="flex flex-col w-full  p-4 bg-primary/5 tracking-wider">
-            <div className="flex flex-row gap-2 md:flex-col">
+          <div className="flex flex-col w-full text-black p-10 bg-white tracking-wider">
+            <div className="flex flex-row gap-2  md:flex-col">
               <Image
                 src="https://www.heuc.edu.et/static/wp-content/uploads/2022/04/hopelogo4.png"
                 width={100}
@@ -33,7 +33,7 @@ export const EducationSection = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-full   p-4 bg-primary/5 tracking-wider">
+          <div className="flex flex-col w-full text-black   p-10 bg-white tracking-wider">
             <div className="flex flex-row gap-2 w-fit md:flex-col">
               <Image
                 src="/newaychallenge.png"
