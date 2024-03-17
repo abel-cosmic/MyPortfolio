@@ -9,12 +9,12 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="flex justify-center w-full h-screen items-center bg-transparent max-md:h-full">
-      <div className="flex flex-col md:flex-row md:items-center w-full md:gap-10  md:px-10">
-        <div className="flex flex-col w-full gap-10 py-44 md:items-start">
+    <div className="flex justify-center w-full h-screen  items-center bg-transparent max-md:h-full">
+      <div className="flex flex-col md:flex-row md:items-center justify-evenly w-full md:gap-10 px-10  md:px-4 ">
+        <div className="flex flex-col w-full md:w-2/3 gap-10 py-44 pl-4 md:items-start">
           <TextGenerateEffect
             words={sentence}
-            className="text-center text-[30px] md:text-5xl  md:text-left "
+            className="text-center text-[30px]  md:text-5xl  md:text-left "
             width=" w-full max-md:text-sm"
           />
 
@@ -54,7 +54,7 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        <div className="px-8 md:px-0 w-[50rem] hidden lg:flex h-fit  ">
+        <div className="px-8 md:px-0 w-2/3  hidden lg:flex h-fit">
           <ThreeDCardDemo />
         </div>
       </div>

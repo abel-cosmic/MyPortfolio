@@ -18,7 +18,37 @@ const FullStack = () => {
         "Prisma",
         "Mysql",
       ],
-    }
+    },
+    {
+      image: "/projects/Frame 1618873116.png",
+      title: "Prepmaster Web App",
+      description:
+        "An E-learning SAAS aiming to help students are universtiees get prepared for thier upcoming exams. This app has more than 100+ endpoints and also contains an admin dashboard for admins to manage their items.",
+      link: "https://prep-master-vite.vercel.app/",
+      techStacks: [
+        "Nextjs",
+        "Tailwindcss",
+        "Shadcn UI",
+        "Express",
+        "Prisma",
+        "Mysql",
+      ],
+    },
+    {
+      image: "/projects/Frame 1618873115.png",
+      title: "Ethiochef Admin Side Web App",
+      description:
+        "Within the Ethiochef Client Side Web App, the dashboard features endpoints designed to perform CRUD (Create, Read, Update, Delete) operations seamlessly. Leveraging technologies such as React.js, Tailwind CSS, and Shadcn UI, users can efficiently manage their data with ease. These endpoints facilitate the creation, retrieval, updating, and deletion of content, ensuring a smooth and intuitive user experience",
+      link: "https://admin.ethiochef.com",
+      techStacks: [
+        "React",
+        "Tailwindcss",
+        "Shadcn UI",
+        "Express",
+        "Prisma",
+        "Mysql",
+      ],
+    },
   ];
 
   return (

@@ -8,14 +8,14 @@ export const EducationSection = () => {
         <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-fit rounded-full">
           My Education
         </div>
-        <div className="flex flex-col gap-4  md:gap-4  w-fit  items-center justify-center   md:w-full md:flex lg:flex-row">
-          <div className="flex flex-col w-full md:w-2/3   p-4 bg-primary/5 tracking-wider">
+        <div className="flex flex-col gap-10  w-full md:w-1/2  items-center justify-center mx-auto">
+          <div className="flex flex-col w-full  p-4 bg-primary/5 tracking-wider">
             <div className="flex flex-row gap-2 md:flex-col">
               <Image
                 src="https://www.heuc.edu.et/static/wp-content/uploads/2022/04/hopelogo4.png"
                 width={100}
                 alt="HEUC logo"
-                className="bg-white p-4 w-fit h-20"
+                className="bg-white p-4 w-44 h-20"
                 height={100}
               />
               <div className="flex flex-col">
@@ -33,8 +33,8 @@ export const EducationSection = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-full md:w-2/3   p-4 bg-primary/5 tracking-wider">
-            <div className="flex flex-row gap-2 md:flex-col">
+          <div className="flex flex-col w-full   p-4 bg-primary/5 tracking-wider">
+            <div className="flex flex-row gap-2 w-fit md:flex-col">
               <Image
                 src="/newaychallenge.png"
                 width={40}

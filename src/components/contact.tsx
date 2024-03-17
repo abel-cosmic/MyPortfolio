@@ -9,12 +9,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { socials } from "../../utils/objects/socials";
 import Image from "next/image";
+import {Card} from "./ui/card";
 
 export function Contact() {
   return (
-    <section className="bg-white dark:bg-black py-12 md:py-16 h-fit  flex flex-col items-center justify-center">
-      <div className="container px-4 flex flex-col gap-4">
-        <div className="w-fit mx-auto px-10 lg:px-20 py-32 rounded-3xl flex flex-col md:flex-row gap-4 lg:gap-10 justify-center items-center ">
+    <div className="bg-transparent   py-12 md:py-16 h-fit  flex flex-col items-center justify-center">
+      <Card className="container px-4 flex flex-col gap-4">
+        <div className="w-fit mx-auto  py-32 rounded-3xl flex flex-col md:flex-row gap-4 lg:gap-10 justify-center items-center ">
           <header className="text-center flex flex-col gap-4 items-center">
             <Image
               src="/logo-dark.ico"
@@ -42,7 +43,7 @@ export function Contact() {
               ))}
             </div>
           </header>
-          <div className="mx-auto  w-full md:w-1/3 lg:w-1/2">
+          <div className="mx-auto md:w-1/2 w-full ">
             <div className="grid gap-6 items-center">
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="grid gap-1.5 w-full">
@@ -67,8 +68,8 @@ export function Contact() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Card>
+    </div>
   );
 }
 
