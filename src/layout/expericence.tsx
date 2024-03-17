@@ -10,8 +10,8 @@ import { Separator } from "@/components/ui/separator";
 
 export const ExperienceSection = () => {
   return (
-    <div className="w-full h-screen ">
-      <div className="flex flex-col items-center gap-4  w-full z-50 py-10 ">
+    <div className="w-full  ">
+      <div className="flex flex-col items-center gap-4  w-full z-50 pb-10  ">
         <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-full">
           My Experience
         </div>
@@ -24,8 +24,8 @@ export const ExperienceSection = () => {
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse "
                 } `}
               >
-                <div className="flex flex-col gap-2 backdrop-blur-3xl bg-primary/5 h-full max-w-[35rem] pl-6 py-10">
-                  <div className="text-sm font-light tracking-wider">
+                <div className="flex flex-col gap-2 backdrop-blur-3xl bg-primary/5 h-full max-w-[35rem] pl-6 pr-4 py-10">
+                  <div className="text-lg font-semibold tracking-wider">
                     {data.title}
                   </div>
                   <div className="text-[10px] tracking-wider ">
@@ -56,9 +56,6 @@ export const ExperienceSection = () => {
             );
           })}
         </div>
-        <Button className="w-fit flex gap-2 flex-row ">
-          View Full Resume <Link className="w-4 h-4" />
-        </Button>
       </div>
     </div>
   );

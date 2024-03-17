@@ -197,6 +197,11 @@ import vercel from "/public/icons/vercel-dark.svg";
 
 export const skills = [
   {
+    name: "FullStack",
+    style: "bg-gradient-to-b from-gray-700 to-gray-900  text-white",
+    icon: <LampDesk className="w-4 h-4" />,
+  },
+  {
     name: "FrontEnd",
     style: "bg-gradient-to-b from-gray-700 to-gray-900  text-white",
     icon: <Paintbrush2 className="w-4 h-4" />,
@@ -251,12 +256,12 @@ export const skillIcons = iconMappings.map(({ id, name, icon }) => ({
   icon: (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger className="cursor-none">
+        <TooltipTrigger className="cursor-none rounded-2xl">
           <Image
             key={id}
             src={icon}
             alt={`${name} Icon`}
-            className="border border-white/20 bg-slate-400/40 w-8 h-8 rounded-2xl"
+            className="border border-white/20 bg-slate-400/40 w-10 h-10 rounded-2xl"
           />
         </TooltipTrigger>
         <TooltipContent>{name}</TooltipContent>

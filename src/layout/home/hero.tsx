@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import { SkillsBadge } from "@/components/badges/SkillBadge";
 import { SubTitle } from "./Subtitle";
 import { Button } from "@/components/ui/button";
-import { badges, sentence } from "../../../utils/objects/setions";
+import { badges, sentence, skills } from "../../../utils/objects/setions";
 import { TextGenerateEffect } from "@/components/acertinity/text-generator";
 import { ThreeDCardDemo } from "@/components/card/3d-card";
 import { socials } from "../../../utils/objects/socials";
@@ -17,8 +17,8 @@ const Hero = () => {
         <div className="flex flex-col w-full gap-10 py-44 md:items-start">
           <TextGenerateEffect
             words={sentence}
-            className="text-center text-[30px] md:text-left md:text-5xl "
-            width="w-2/3 max-md:w-full max-md:text-sm"
+            className="text-center text-[30px] md:text-5xl  md:text-left "
+            width=" w-full max-md:text-sm"
           />
 
           <SubTitle />
@@ -35,12 +35,13 @@ const Hero = () => {
             ))}
           </div> */}
           <div className="flex flex-row  gap-2 flex-wrap w-full items-center md:items-start md:justify-start justify-center">
-            {badges.map((skill, index) => (
+            {skills.map((skill, index) => (
               <BorderButton
                 key={index}
-                className="bg-primary text-white dark:text-black px-2 py-1 text-xs rounded-full"
+                className="bg-primary text-white dark:text-black px-2 py-1 text-xs rounded-full flex flex-row gap-2 items-center"
               >
-                {skill}
+                {skill.icon }
+                {skill.name}
               </BorderButton>
             ))}
           </div>

@@ -16,7 +16,7 @@ const SkillsSection = ({
   const thirdRow = skillIcons.slice(21, 30);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-10  w-full py-44 bg-transparent ">
+    <div className="flex flex-col items-center justify-center gap-10  w-full py-44 bg-white dark:bg-black ">
       <SkillHeader />
 
       <div className="flex flex-col max-md:w-72 w-1/2 gap-4">

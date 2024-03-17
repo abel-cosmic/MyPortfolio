@@ -9,7 +9,7 @@ import {
     return (
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger className="cursor-pointer">{icon}</TooltipTrigger>
+          <TooltipTrigger className="cursor-pointer rounded-2xl">{icon}</TooltipTrigger>
           <TooltipContent>{name}</TooltipContent>
         </Tooltip>
       </TooltipProvider>
