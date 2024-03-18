@@ -16,7 +16,7 @@ export const ExperienceSection = () => {
         <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-fit rounded-full">
           My Experience
         </div>
-        <VerticalTimeline className="">
+        <VerticalTimeline className="" lineColor="#22c55e">
           <div className="flex flex-col md:w-4/5 justify-center lg:w-full w-full  gap-4 items-center">
             {experience.map((data, index) => {
               return (
@@ -24,20 +24,22 @@ export const ExperienceSection = () => {
                   key={index}
                   className="vertical-timeline-element--work bg-transparent "
                   contentArrowStyle={{
-                    borderRight: "2px solid hsl(var(--border))",
+                    borderRight: "2px solid #22c55e",
+                  
                   }}
+                  // Remove the lineColor prop
                   date={data.timeline}
                   visible
                   contentStyle={{
                     background: "rgba(255,255,255,0.4)",
                     border: "2px solid hsl(var(--border))",
                     boxShadow: "none",
-
+                    outlineColor:"#22c55e",
                     backdropFilter: "blur(30px)",
                   }}
                   iconStyle={{
-                    background: `hsl(var(--background))`,
-                    color: "hsl(var(--primary))",
+                    background: `#22c55e`,
+                    color: "#fff",
                   }}
                   icon={data.icon}
                 >

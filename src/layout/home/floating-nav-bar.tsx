@@ -28,7 +28,7 @@ const FloatingNavBar = ({
     <div className="hover:scale-105 fixed   z-50 bottom-10 left-6 right-6 transition-all ease-linear">
       <CardContainer className="max-md:w-full ">
         <CardItem
-          className={`glass-container bg-white dark:bg-transparent bg-opacity-25 backdrop-blur-2xl border-2 border-b-0 pt-4   rounded-full  w-full items-center justify-evenly scale-0 shadow-xl flex flex-row gap-2 py-4 px-2`}
+          className={`glass-container bg-white dark:bg-transparent border dark:border-white/20 bg-opacity-25 backdrop-blur-2xl pt-4   rounded-full  w-full items-center justify-evenly scale-0 shadow-xl flex flex-row gap-3 py-4 px-2`}
         >
           {menus.map((menu) => (
             <TooltipProvider key={menu.link}>
@@ -38,7 +38,7 @@ const FloatingNavBar = ({
                     variant={"menu"}
                     size={"menuicon"}
                     className={
-                      "transition-all hover:scale-150 max-md:scale-100 ease-linear"
+                      "transition-all hover:scale-125 max-md:scale-100 ease-linear"
                     }
                     onClick={() => handleClick(menu.link)}
                   >

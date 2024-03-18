@@ -24,7 +24,7 @@ export const SkillHeader = () => {
           <TextTransition
             springConfig={presets.molasses}
             inline
-            className="mx-2 text-purple-400"
+            className="mx-2 text-[#22c55e]"
           >
             {attraction[index % attraction.length]}
           </TextTransition>{" "}
