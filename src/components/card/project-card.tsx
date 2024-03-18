@@ -31,7 +31,7 @@ const ProjectCard = ({
         <ul className="flex flex-row gap-1 flex-wrap tracking-tight leading-relaxed">
           {techStack.map((tech, index) => (
             <BorderButton key={tech}>
-              <div className={`p-1 px-4 text-xs bg-background rounded-full dark:text-primary text-white`}>{tech}</div>
+              <div className={`p-1 px-4 text-xs bg-black dark:bg-background dark:text-white  rounded-full dark:text-primary text-black`}>{tech}</div>
             </BorderButton>
           ))}
         </ul>
