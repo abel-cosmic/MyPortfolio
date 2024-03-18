@@ -21,25 +21,26 @@ export const ExperienceSection = () => {
                   <VerticalTimelineElement
                     className="vertical-timeline-element--work bg-transparent"
                     contentArrowStyle={{
-                      borderRight: "4px solid  #fff",
+                      borderRight: "2px solid hsl(var(--border))",
                     }}
-                    date= {data.timeline}
+                    date={data.timeline}
                     visible
                     contentStyle={{
-                      background: "#fff",
+                      background: "rgba(255,255,255,0.4)",
+                      border:"2px solid hsl(var(--border))",
                       boxShadow: "none",
-                      margin: "0px",
+                    
                       backdropFilter: "blur(30px)",
                     }}
                     iconStyle={{
-                      background: "#fff",
-                      color: "#000",
+                      background: `hsl(var(--background))`,
+                      color: "hsl(var(--primary))",
                     }}
                     icon={data.icon}
                   >
                     <div
                       key={index}
-                      className={`flex  gap-4 items-start flex-row-reverse lg:items-center  text-black px-6 w-full ${
+                      className={`flex  gap-4 items-start flex-row-reverse lg:items-center  text-black dark:text-white px-6 w-full ${
                         index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse "
                       } `}
                     >
