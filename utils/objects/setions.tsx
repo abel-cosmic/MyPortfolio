@@ -5,12 +5,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import {
+  CableCar,
   Database,
   DatabaseBackup,
+  FolderClock,
   FolderKanban,
   Home,
   LampDesk,
-  PanelsTopLeft,
+  LayoutList,
   SmartphoneNfc,
   Webhook,
 } from "lucide-react";
@@ -66,20 +68,21 @@ export const menus = [
     link: "home",
   },
   {
-    icons: <DatabaseBackup className="w-4 h-4 text-primary" />,
-    tip: "About",
-    link: "about",
-  },
-  {
-    icons: <PanelsTopLeft className="w-4 h-4 text-primary" />,
-    tip: "Project",
-    link: "projects",
-  },
-  {
-    icons: <LampDesk className="w-4 h-4 text-primary" />,
+    icons: <CableCar className="w-4 h-4 text-primary" />,
     tip: "Skills",
     link: "skills",
   },
+  {
+    icons: <FolderClock className="w-4 h-4 text-primary" />,
+    tip: "Experience",
+    link: "experience",
+  },
+  {
+    icons: <LayoutList className="w-4 h-4 text-primary" />,
+    tip: "Projects",
+    link: "projects",
+  },
+  
   {
     icons: <SmartphoneNfc className="w-4 h-4 text-primary" />,
     tip: "Contact",

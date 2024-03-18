@@ -8,7 +8,10 @@ import "react-vertical-timeline-component/style.min.css";
 
 export const ExperienceSection = () => {
   return (
-    <div id="experience" className="w-full bg-white/60 dark:bg-transparent md:py-20 py-6 ">
+    <div
+      id="experience"
+      className="w-full bg-white/60 dark:bg-transparent md:py-20 py-6 "
+    >
       <div className="flex flex-col items-center gap-4  w-full z-50 pb-10  ">
         <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-fit rounded-full">
           My Experience
@@ -18,6 +21,7 @@ export const ExperienceSection = () => {
             {experience.map((data, index) => {
               return (
                 <VerticalTimelineElement
+                  key={index}
                   className="vertical-timeline-element--work bg-transparent "
                   contentArrowStyle={{
                     borderRight: "2px solid hsl(var(--border))",
