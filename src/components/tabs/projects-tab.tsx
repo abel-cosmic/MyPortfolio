@@ -7,7 +7,7 @@ import UiUx from "../projects/ui";
 
 export function TabsDemo() {
   return (
-    <div className="flex flex-col gap-10 py-10 items-center">
+    <div id="projects" className="flex flex-col gap-10 py-10 items-center ">
       <div className="sticky top-0 px-6 py-2  z-40 font-light text-center text-2xl leading-snug tracking-wider  backdrop-blur-2xl w-fit rounded-full">
         Featured Projects
       </div>

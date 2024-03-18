@@ -9,9 +9,9 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="flex justify-center w-full h-screen  items-center bg-transparent max-md:h-full">
+    <div id="home" className="flex justify-center w-full h-screen  items-center bg-transparent max-md:h-full ">
       <div className="flex flex-col md:flex-row md:items-center justify-evenly w-full md:gap-10 px-10  md:px-4 ">
-        <div className="flex flex-col w-full md:w-2/3 gap-10 py-44 pl-4 md:items-start">
+        <div className="flex flex-col w-full md:w-2/3 gap-10 py-44  md:items-start">
           <TextGenerateEffect
             words={sentence}
             className="text-center text-[30px]  md:text-5xl  md:text-left "

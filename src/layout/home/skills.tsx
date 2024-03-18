@@ -16,10 +16,10 @@ const SkillsSection = ({
   const thirdRow = skillIcons.slice(21, 30);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-10  w-full py-44 bg-white dark:bg-black ">
+    <div id="skills" className="flex flex-col items-center justify-center gap-10  w-full  py-44 bg-white dark:bg-black ">
       <SkillHeader />
 
-      <div className="flex flex-col max-md:w-72 w-1/2 gap-4">
+      <div className="flex flex-col w-full md:px-60 gap-4">
         <Marquee direction="left" className="w-full"  >
           <div className="flex flex-row   gap-12 mx-4">
             {firstRow.map((skill) => (

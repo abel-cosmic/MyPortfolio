@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer base {
      :root {
-        --background: hsl( 0 0% 100%);
+        --background: 0 0% 100%;
         --foreground: 224 71.4% 4.1%;
         --card: 0 0% 100%;
         --card-foreground: 224 71.4% 4.1%;
@@ -53,5 +53,31 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+    .no-visible-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .no-visible-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* width */
+     ::-webkit-scrollbar {
+        width: 6px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 20px;
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: hsl(var(--secondary));
+        border-radius: 20px;
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: #000000;
     }
 }

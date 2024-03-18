@@ -14,7 +14,7 @@ export const SkillHeader = () => {
   }, []);
   return (
     <div
-      className={` flex flex-col items-center text-center gap-4 px-4`}
+      className={` flex flex-col items-center text-center gap-4 md:w-2/3  px-4`}
     >
       <div className="flex flex-row items-end gap-4">
         <h1
