@@ -43,7 +43,7 @@ export function UnderConstruction() {
               working on something awesome! Please Check back soon.
             </p>
           </div>
-          <Countdown targetDate="2024-03-11T23:59:59" />
+          <Countdown targetDate="2024-03-12T23:59:59" />
           <div className="max-w-[600px] w-full grid gap-2 justify-center">
             <div className="flex items-start gap-4">
               <IoCheckmark className="h-4 w-4 flex-shrink-0 text-gray-500 dark:text-gray-400" />
