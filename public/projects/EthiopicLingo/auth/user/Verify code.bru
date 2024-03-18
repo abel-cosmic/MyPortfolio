@@ -1,0 +1,20 @@
+meta {
+  name: Verify code
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{apiURL}}/auth/verify
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email":"test@example.com",
+    "type":"VERIFICATION",
+    // write the verification doe sent
+    "code":0
+  }
+}

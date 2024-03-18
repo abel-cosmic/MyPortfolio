@@ -1,0 +1,15 @@
+meta {
+  name: Get Sections
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{apiURL}}/sections
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: JWT
+}

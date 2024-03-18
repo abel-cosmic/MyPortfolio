@@ -1,92 +1,71 @@
 "use client";
 import { Spotlight } from "@/components/ui/spotlight";
-import { UnderConstruction } from "@/components/underconstruction";
-import { StickyScroll } from "@/layout/card-stacks";
-import Link from "next/link";
-import { socials } from "../../utils/objects/socials";
-import { ScrollArea } from "@/components/ui/scroll-area";
+// import { UnderConstruction } from "@/components/underconstruction";
+import { ExperienceSection } from "@/layout/expericence";
 import ProfileActionToggle from "@/components/toogle/profile-action-toggle";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { BorderButton } from "@/components/ui/moving-border";
-import HeroCard from "@/components/card/hero";
-
-export default function Home() {
+import Hero from "@/layout/home/hero";
+import FloatingNavBar from "@/layout/home/floating-nav-bar";
+import { menus, skillIcons } from "../../utils/objects/setions";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import SkillsSection from "@/layout/home/skills";
+import { EducationSection } from "@/layout/education";
+import { Button } from "@/components/ui/button";
+import { Link } from "lucide-react";
+import { Contact } from "@/components/contact";
+import dynamic from "next/dynamic";
+import { GoSun, GoMoon } from "react-icons/go";
+import { RiInboxArchiveLine } from "react-icons/ri";
+import { TabsDemo } from "@/components/tabs/projects-tab";
+const Home = () => {
   const { setTheme, theme } = useTheme();
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-  const toggleTheme = () => {
-    if (darkMode) setTheme("dark");
-    else setTheme("light");
-  };
-  const configTheme = () => {
-    if (theme == "dark") setDarkMode(!darkMode);
-    if (theme == "light") setDarkMode(darkMode);
-  };
-  useEffect(toggleTheme, [darkMode]);
-  useEffect(configTheme, []);
+  const [isDarkMode, setIsDarkMode] = useState(() => theme === "dark");
 
-  const badges = ["Front End", "Back End", "Full Stack", "UI/UX", "DevOps"];
+  // Function to toggle the theme
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    setTheme(isDarkMode ? "light" : "dark");
+  };
+
+  // Listen for system theme changes
+  useEffect(() => {
+    setTheme(isDarkMode ? "dark" : "light");
+  }, [isDarkMode, setTheme]);
 
   return (
-    <main className="flex h-screen justify-center items-center flex-row w-full lg:px-28  px-4 gap-4 relative dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-      <div className="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" />
-      <UnderConstruction />
-    </main>
-    // <ScrollArea className="flex h-screen justify-center items-center flex-row w-full   gap-10 relative dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-    //   <div className="flex justify-center items-center flex-col md:flex-row w-full    gap-10 md:gap-4">
-    //     <div className="flex flex-col w-full h-screen  justify-center items-start  ">
-    //       <div className="flex flex-col  w-full  h-full justify-center items-start px-10 md:px-28 py-44">
-    //         <div className="flex flex-col  gap-3 w-full ">
-    //           <div className="text-4xl font-bold leading-normal tracking-wide">
-    //             Abel Shibabaw
-    //           </div>
-    //           <div className="text-lg font-medium leading-loose tracking-wide">
-    //             From Design to Code.
-    //           </div>
-    //           <div className="flex flex-row flex-wrap items-center w-full justify-center md:justify-start gap-2">
-    //             {badges.map((badge, index) => (
-    //               <BorderButton
-    //                 borderRadius="1rem"
-    //                 key={index}
-    //                 className="bg-white dark:bg-black text-black dark:text-white  border-neutral-200 dark:border-slate-800"
-    //               >
-    //                 <div className="m-1 text-xs">{badge}</div>
-    //               </BorderButton>
-    //             ))}
-    //           </div>
-    //          <HeroCard/>
-    //           <div className="text-gray-400  leading-relaxed tracking-wide">
-    //             I build pixel-perfect, engaging, and accessible digital
-    //             experiences.
-    //           </div>
-    //           <div className="flex gap-6 mt-6 justify-self-end">
-    //             {socials.map((social, index) => (
-    //               <Link
-    //                 key={index}
-    //                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
-    //                 href={social.href}
-    //                 target="_blank"
-    //               >
-    //                 <social.icon className="h-6 w-6 lg:h-6 lg:w-6" />
-    //               </Link>
-    //             ))}
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <StickyScroll />
-    //   </div>
-    //   <Spotlight className="-top-20 left-10 md:left-60 md:-top-20" />
-    //   <div className="absolute top-4 right-10 flex gap-2 items-center z-50">
-    //     <ProfileActionToggle
-    //       toggleState={darkMode}
-    //       handleOnToggle={(toggleState: boolean) =>
-    //         setDarkMode(() => toggleState)
-    //       }
-    //     />
-    //   </div>
-    //   <div className="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
-    // </ScrollArea>
+    <div className="relative h-screen px-1 md:px-20 dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+      <div className="fixed inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
+      {/* <UnderConstruction /> */}
+      <Hero />
+      <SkillsSection skillIcons={skillIcons} />
+      <ExperienceSection />
+      <EducationSection />
+      <Button className="w-fit flex gap-2 flex-row mx-auto my-10 ">
+        View Full Resume <Link className="w-4 h-4" />
+      </Button>
+      <TabsDemo />
+      <Button className="w-fit flex gap-2 flex-row mx-auto my-10 ">
+        Projects Archive <RiInboxArchiveLine className="w-4 h-4" />
+      </Button>
+      <Spotlight className="-top-20 left-10 md:left-60 md:-top-20" />
+      <div className="fixed top-6 right-6 flex gap-2 items-center z-50">
+        <Button
+          onClick={toggleTheme}
+          variant={"outline"}
+          size={"menuicon"}
+          className="flex items-center justify-center p-3 bg-white dark:bg-black rounded-full"
+        >
+          {isDarkMode ? (
+            <GoSun className="w-6 h-6 text-primary" />
+          ) : (
+            <GoMoon className="text-primary w-6 h-6" />
+          )}
+        </Button>
+      </div>
+      <FloatingNavBar menus={menus} />
+      <Contact />
+    </div>
   );
-}
+};
+export default dynamic(() => Promise.resolve(Home), { ssr: false });

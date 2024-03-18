@@ -1,0 +1,11 @@
+meta {
+  name: Get User Profile
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{proURL}}/user/profile
+  body: json
+  auth: none
+}

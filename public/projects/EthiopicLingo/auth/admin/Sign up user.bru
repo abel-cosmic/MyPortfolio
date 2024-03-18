@@ -1,0 +1,21 @@
+meta {
+  name: Sign up user
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{apiURL}}/auth/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "first_name":"test firstname",
+    "last_name":"test lastname",
+    "phone_number":"0912345678",
+    "email":"test@example.com",
+    "password":"123456789"
+  }
+}

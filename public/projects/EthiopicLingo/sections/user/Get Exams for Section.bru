@@ -1,0 +1,15 @@
+meta {
+  name: Get Exams for Section
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{apiURL}}/sections/1/exam
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: JWT
+}
