@@ -1,15 +1,19 @@
 "use client";
 import { SubTitle } from "./Subtitle";
 import { Button } from "@/components/ui/button";
-import {  sentence, skills } from "../../../utils/objects/setions";
+import { sentence, skills } from "../../../utils/objects/setions";
 import { TextGenerateEffect } from "@/components/acertinity/text-generator";
 import { ThreeDCardDemo } from "@/components/card/3d-card";
 import { BorderButton } from "@/components/ui/moving-border";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div id="home" className="flex justify-center w-full h-screen  items-center bg-transparent max-md:h-full ">
+    <div
+      id="home"
+      className="flex justify-center w-full h-screen  items-center bg-transparent max-md:h-full "
+    >
       <div className="flex flex-col md:flex-row md:items-center justify-evenly w-full md:gap-10 px-10  md:px-4 ">
         <div className="flex flex-col w-full md:w-2/3 gap-10 py-44  md:items-start">
           <TextGenerateEffect
@@ -37,21 +41,34 @@ const Hero = () => {
                 key={index}
                 className="bg-primary text-white dark:text-black px-2 py-1 text-xs rounded-full flex flex-row gap-2 items-center"
               >
-                {skill.icon }
+                {skill.icon}
                 {skill.name}
               </BorderButton>
             ))}
           </div>
           <div className="flex flex-row gap-4  w-full md:pr-6 md:px-0 px-6">
-            <Button className="w-full md:w-1/3 rounded-full py-6 flex flex-row gap-2 text-md">
-              GitHub <FaGithub className="w-6 m-0 h-6" />
-            </Button>
-            <Button
-              className="w-full md:w-1/3 rounded-full py-6 flex flex-row gap-2 text-md"
-              variant={"outline"}
+            <Link
+              href="https://github.com/abel-cosmic"
+              target="_blank"
+              className=" flex flex-row w-full md:w-1/3"
             >
-              LinkedIn <FaLinkedin className="w-6 m-0 h-6" />
-            </Button>
+              <Button className=" rounded-full py-6 flex flex-row gap-2 text-md">
+                GitHub <FaGithub className="w-6 m-0 h-6" />
+              </Button>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/abel-shibabaw-4b3b6125a/"
+              target="_blank"
+              className=" flex flex-row w-full md:w-1/3"
+            >
+              <Button
+                className="rounded-full py-6 flex flex-row gap-2 text-md"
+                variant={"outline"}
+              >
+                {" "}
+                LinkedIn <FaLinkedin className="w-6 m-0 h-6" />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="px-8 md:px-0 w-2/3  hidden lg:flex h-fit">
