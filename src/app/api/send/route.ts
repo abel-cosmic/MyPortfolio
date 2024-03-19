@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
-export default async function POST(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
