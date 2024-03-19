@@ -22,7 +22,6 @@ import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-
 export function Contact() {
   const FormSchema = z.object({
     name: z.string().min(2, {
