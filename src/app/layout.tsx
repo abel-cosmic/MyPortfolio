@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../../utils/providers/theme";
 import {Toaster} from "@/components/ui/sonner";
+import Loglib from "@loglib/tracker/react";
 import {ReactQueryClientProvider} from "../../utils/providers/react-query-client-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,6 +31,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <ReactQueryClientProvider>
+      <Loglib
+                    config={{
+                        id: "www_abelshibabaw",
+                    }}
+                />
       <ThemeProvider
           attribute="class"
           defaultTheme="dark"
