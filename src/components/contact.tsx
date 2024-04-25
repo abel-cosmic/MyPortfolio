@@ -23,10 +23,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useSendMessageMutation } from "@/hook/send/send";
-import {Loader} from "lucide-react";
-import {useEffect} from "react";
+import { Loader } from "lucide-react";
+import { useEffect } from "react";
 export function Contact() {
-  const { mutate, isSuccess, isError,error } = useSendMessageMutation();
   const FormSchema = z.object({
     name: z.string().min(2, {
       message: "Username must be at least 2 characters.",
@@ -46,34 +45,13 @@ export function Contact() {
     },
   });
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
-   
-    mutate({
-      to: data["email"],
-      subject: data["message"],
-      text: data["name"],
+    toast("Your message has been successfully sent!", {
+      action: {
+        label: "close",
+        onClick: () => console.log("close"),
+      },
     });
   };
-  useEffect(()=>{
-    if(isSuccess){
-      toast("Your message has been successfully sent!", {
-        action: {
-          label: "close",
-          onClick: () => console.log("close"),
-        },
-      });
-      form.reset();
-    }
-    if(isError){
-      toast("An error occurred while sending the message!", {
-        action: {
-          label: "close",
-          onClick: () => console.log("close"),
-        },
-      });
-      console.log(error)
-    }
-  
-  }, [isSuccess]);
   return (
     <Form {...form}>
       <form
@@ -164,13 +142,7 @@ export function Contact() {
                     )}
                   />
                 </div>
-                {isSuccess ? (
-                  <Button disabled className="animate-spin">
-                    <Loader/>
-                  </Button>
-                ) : (
-                  <Button type="submit">Submit</Button>
-                )}
+                <Button type="submit">Submit</Button>
               </div>
             </div>
           </div>
