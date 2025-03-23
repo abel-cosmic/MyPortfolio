@@ -44,7 +44,7 @@ const Home = () => {
       <EducationSection />
       <Button className="w-fit mx-auto self-center  my-10 ">
         <Link
-          href="https://drive.google.com/file/d/1VN0kXojQzrsqDrq28o2lJL1ffoHAjPQw/view?usp=sharing"
+          href="https://drive.google.com/file/d/13JndTb1xuQXAzbkD7nAwJRWSUvNHbTwL/view?usp=sharing"
           target="_blank" 
           className="flex gap-2 flex-row "
         >
