@@ -24,7 +24,7 @@ const About = () => {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 tracking-tight text-foreground">
               The Journey from Code to Impact
             </h2>
-            <div className="space-y-4 text-sm leading-relaxed text-foreground ">
+            <div className="space-y-4 text-sm leading-relaxed text-foreground max-md:text-justify ">
               <p>
                 Full-stack engineer passionate about turning complex problems
                 into elegant solutions. From leading student parliament to
