@@ -7,7 +7,7 @@ import Projects from "@/components/projects";
 
 export default function Home() {
   return (
-    <div className="space-t-16">
+    <div className="space-t-16 pt-10">
       <Navbar />
       <Hero />
       <About />

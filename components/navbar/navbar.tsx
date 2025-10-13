@@ -5,7 +5,7 @@ import { NavMenu } from "./nav-menu";
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-10 top-6 inset-x-4 h-14 bg-background/70 rounded-xl border border-border backdrop-blur-lg max-w-screen-md mx-auto shadow-sm">
+    <nav className="fixed z-10 top-4 inset-x-4 h-14 bg-background/70 rounded-xl border border-border backdrop-blur-lg max-w-screen-md mx-auto shadow-sm">
       <div className="h-full flex items-center justify-between mx-auto px-3">
         <Logo />
 
