@@ -175,6 +175,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
+          forcedTheme="dark"
           disableTransitionOnChange
         >
           <main>{children}</main>
