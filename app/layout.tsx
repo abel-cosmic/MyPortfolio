@@ -173,9 +173,7 @@ export default function RootLayout({
       <body className={`${lora.className} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          forcedTheme="dark"
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <main>{children}</main>
