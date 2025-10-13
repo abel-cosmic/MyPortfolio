@@ -4,11 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CircleArrowDown, Zap } from "lucide-react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Hero = () => {
-  const { push } = useRouter();
   return (
     <div className="relative min-h-screen flex items-center justify-center px-6 pt-6 overflow-hidden bg-background">
       <AnimatedGridPattern
@@ -26,10 +24,10 @@ const Hero = () => {
           Fullstack Engineer
         </Badge>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight text-foreground">
-          Building Tomorrow's Digital Solutions, Today
+          Building Tomorrow&apos;s Digital Solutions, Today
         </h1>
         <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl mx-auto">
-          I'm Abel Shibabaw, a passionate Fullstack Developer specializing in
+          I&apos;m Abel Shibabaw, a passionate Fullstack Developer specializing in
           enterprise-grade web applications and AI-powered solutions. From
           crafting sophisticated ERP systems that serve thousands of students to
           building intelligent automation platforms with cutting-edge AI, I

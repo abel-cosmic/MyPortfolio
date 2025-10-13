@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { Download } from "lucide-react";
 import Image from "next/image";
 import { HTMLAttributes } from "react";
-import { GithubLogo } from "./icons";
 import { useRouter } from "next/navigation";
 
 const About = () => {
@@ -35,7 +34,7 @@ const About = () => {
                 microservices that actually work, and occasionally win
                 hackathons along the way. Currently building the future at
                 Trident Technologies while exploring how AI can amplify human
-                potential. Let's build something remarkable together.
+                potential. Let&apos;s build something remarkable together.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start ">

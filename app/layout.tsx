@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -178,10 +179,12 @@ export default function RootLayout({
         >
           <main>{children}</main>
           <div className="fixed bottom-4 right-0 z-0 max-md:hidden">
-            <img
+            <Image
               src="/anime/goku.png"
               alt="Anime touch"
-              className="h-60  transition-opacity duration-300"
+              width={240}
+              height={240}
+              className="transition-opacity duration-300"
             />
           </div>
         </ThemeProvider>
