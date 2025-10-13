@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-6 pt-6 overflow-hidden bg-background">
+    <div className="relative min-h-screen flex items-center justify-center px-6 pt-6 max-md:pt-12 overflow-hidden bg-background">
       <AnimatedGridPattern
         numSquares={100}
         maxOpacity={0.4}
