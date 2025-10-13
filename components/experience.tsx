@@ -55,7 +55,7 @@ const ExperienceItem = ({
             <span className="font-medium">{period}</span>
           </div>
         </div>
-        <p className="text-muted-foreground text-base leading-relaxed">
+        <p className="text-muted-foreground text-sm leading-relaxed">
           {description}
         </p>
         <div className="flex flex-wrap gap-2">
