@@ -154,7 +154,7 @@ const Projects = () => {
         "Chapa",
         "ETSwitch",
       ],
-      liveUrl: "https://www.heuc.edu.et/",
+      liveUrl: "https://www.ethiochef.com/",
     },
     {
       title: "Digital Merkato",
