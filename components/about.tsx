@@ -42,7 +42,7 @@ const About = () => {
                 variant="outline"
                 onClick={() =>
                   push(
-                    "https://drive.google.com/file/d/1_o4Uyfq4lJawxYXn9_EAik-zYSA4JyfZ/view?usp=sharing"
+                    "https://drive.google.com/file/d/15c9n9088TWLZ_IaRW7ykweaSZjHlZjyL/view?usp=sharing"
                   )
                 }
               >
