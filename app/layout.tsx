@@ -2,6 +2,7 @@ import Goku from "@/components/ui/goku";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
+
 import "./globals.css";
 
 const lora = Lora({
