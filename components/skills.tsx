@@ -46,17 +46,17 @@ const MarqueeRow = ({ items, reverse = false }: { items: typeof skills; reverse?
       {[...items, ...items, ...items, ...items].map((skill, index) => (
         <div
           key={index}
-          className="cursor-target flex items-center gap-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm px-5 py-3 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(var(--primary),0.2)] hover:bg-card transition-all duration-300 group"
+          className="cursor-target flex items-center gap-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm px-5 py-3  transition-all duration-300 group"
         >
           <Image
             src={skill.icon}
             alt={`${skill.name} icon`}
             width={24}
             height={24}
-            className="w-6 h-6 object-contain filter drop-shadow-sm dark:brightness-150 group-hover:scale-110 transition-transform duration-300"
+            className="w-6 h-6 object-contain filter drop-shadow-sm dark:brightness-150"
           />
           <span
-            className="text-sm font-semibold text-foreground whitespace-nowrap group-hover:text-primary transition-colors duration-300"
+            className="text-sm font-semibold text-foreground whitespace-nowrap"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {skill.name}

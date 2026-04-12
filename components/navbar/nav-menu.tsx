@@ -15,8 +15,8 @@ interface NavMenuProps extends NavigationMenuProps {
 
 const navLinks = [
   { title: "About", href: "/#about" },
-  { title: "All Experience", href: "/experience" },
-  { title: "All Projects", href: "/projects" },
+  { title: "Experience", href: "/experience" },
+  { title: "Projects", href: "/projects" },
   { title: "Contact", href: "/#footer" },
 ];
 
@@ -32,7 +32,7 @@ export const NavMenu = ({ className, onLinkClick, ...props }: NavMenuProps) => (
       {navLinks.map(({ title, href }) => (
         <NavigationMenuItem key={title} className="w-full md:w-auto mt-1 md:mt-0">
           <NavigationMenuLink asChild>
-            <Link href={href} className={cn(navLinkClass, "data-[orientation=vertical]:justify-start")} onClick={onLinkClick}>
+            <Link href={href} className={cn(navLinkClass, "data-[orientation=vertical]:justify-start mx-0.5")} onClick={onLinkClick}>
               {title}
             </Link>
           </NavigationMenuLink>
