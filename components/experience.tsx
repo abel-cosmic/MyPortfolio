@@ -1,8 +1,10 @@
 import { Badge } from "@/components/ui/badge";
-import { Building2, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Image from "next/image";
+import experiencesData from "@/data/experiences.json";
 
 interface ExperienceItemProps {
+  index: number;
   title: string;
   company: string;
   period: string;
@@ -12,6 +14,7 @@ interface ExperienceItemProps {
 }
 
 const ExperienceItem = ({
+  index,
   title,
   company,
   period,
@@ -20,47 +23,73 @@ const ExperienceItem = ({
   image,
 }: ExperienceItemProps) => {
   return (
-    <div className="relative pl-8 pb-12 group">
-      {/* Timeline line */}
-      <div className="absolute left-0 top-2.5 h-full w-0.5 bg-border group-first:h-[calc(100%-24px)] group-first:top-6">
-        <div className="absolute h-3 w-3 -left-[5px] top-0 rounded-full border-2 border-primary bg-background shadow-sm" />
+    <div className="group relative flex gap-6 pb-10 last:pb-0">
+      {/* Left column: number + timeline */}
+      <div className="flex flex-col items-center">
+        {/* Numbered circle */}
+        <div
+          className="flex-shrink-0 w-9 h-9 rounded-full border-2 border-primary bg-background flex items-center justify-center shadow-xs z-10"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          <span className="text-xs font-bold text-primary">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        </div>
+        {/* Vertical line */}
+        <div className="mt-2 flex-1 w-px bg-border group-last:hidden" />
       </div>
 
-      {/* Content */}
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
+      {/* Right: card */}
+      <div className="flex-1 rounded-2xl border border-border bg-card p-5 mb-2 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+        {/* Company row */}
+        <div className="flex items-center gap-3 mb-3">
+          {image ? (
+            <Image
+              src={image}
+              alt={company}
+              width={36}
+              height={36}
+              className="rounded-full object-cover ring-1 ring-border flex-shrink-0"
+            />
+          ) : (
+            <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 ring-1 ring-border">
+              <span className="text-primary text-xs font-bold uppercase" style={{ fontFamily: "var(--font-heading)" }}>
+                {company.charAt(0)}
+              </span>
+            </div>
+          )}
           <div>
-            {image ? (
-              <Image
-                src={image}
-                alt={company}
-                width={40}
-                height={40}
-                className="rounded-lg object-cover shadow-sm ring-1 ring-border"
-              />
-            ) : (
-              <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shadow-sm">
-                <Building2 className="w-5 h-5 text-primary" />
-              </div>
-            )}
-          </div>
-          <span className="text-lg font-semibold">{company}</span>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold text-foreground mb-1">
-            {title}
-          </h3>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Calendar className="w-4 h-4" />
-            <span className="font-medium">{period}</span>
+            <p className="text-sm font-semibold text-foreground" style={{ fontFamily: "var(--font-heading)" }}>
+              {company}
+            </p>
+            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+              <Calendar className="w-3 h-3" />
+              <span>{period}</span>
+            </div>
           </div>
         </div>
-        <p className="text-muted-foreground text-sm leading-relaxed">
+
+        {/* Role title */}
+        <h3
+          className="text-base font-semibold text-foreground mb-2"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
           {description}
         </p>
-        <div className="flex flex-wrap gap-2">
+
+        {/* Tech chips */}
+        <div className="flex flex-wrap gap-1.5">
           {technologies.map((tech) => (
-            <Badge key={tech} className="text-xs font-medium">
+            <Badge
+              key={tech}
+              variant="secondary"
+              className="text-xs font-medium rounded-full px-2.5 py-0.5"
+            >
               {tech}
             </Badge>
           ))}
@@ -70,166 +99,50 @@ const ExperienceItem = ({
   );
 };
 
+interface Experience {
+  title: string;
+  image?: string;
+  company: string;
+  period: string;
+  description: string;
+  technologies: string[];
+}
+
+const experiences: Experience[] = experiencesData as Experience[];
+
 const Experience = () => {
-  const experiences: {
-    title: string;
-    image?: string;
-    company: string;
-    period: string;
-    description: string;
-    technologies: string[];
-  }[] = [
-    {
-      title: "Software Engineer",
-      image: "/companies/trident.jpg",
-      company: "Trident Technologies",
-      period: "Apr 2024 - Present",
-      description:
-        "Designed and developed ERP system for a University College to manage classes, examinations, registration and school fees, increasing student interactivity by 65%. Built content management systems and landing pages using modern tech stack. Implemented CI/CD pipelines and microservices architecture deployed on Kubernetes.",
-      technologies: [
-        "Nextjs",
-        "NestJS",
-        "MongoDB",
-        "CassandraDB",
-        "PostgreSQL",
-        "Prisma",
-        "TypeScript",
-        "TailwindCSS",
-        "ShadcnUI",
-        "TanstackQuery",
-        "ERP",
-        "Microservices",
-      ],
-    },
-    {
-      title: "Full Stack Engineer",
-      image: "/companies/agoraedu.jpg",
-      company: "Agora",
-      period: "Jun 2025 - Sep 2025",
-      description:
-        "Worked on part-time projects building full-stack web solutions with modern JavaScript frameworks. Collaborated remotely with cross-functional teams to design and deliver scalable application. the application is named lussia that helps",
-      technologies: [
-        "React",
-        "Node.js",
-        "TypeScript",
-        "Next.js",
-        "TailwindCSS",
-      ],
-    },
-    {
-      title: "Fullstack Engineer",
-      image: "/companies/nucleusinstitute.jpg",
-      company: "Nucleus Institute Corp",
-      period: "Feb 2025 - May 2025",
-      description:
-        "Worked with a talented team creating an automation studio for pipelines, vector databases, chat interfaces with documents, and synthetic data generation. Utilized an in-house fine-tuned AI model to enable users to leverage the platform for their own needs. Developed medical assessment web app, meal planner, and Eido movie/music recommendation system.",
-      technologies: [
-        "Next.js",
-        "NestJS",
-        "Apollo GraphQL",
-        "Express.js",
-        "TailwindCSS",
-        "TypeScript",
-        "React Native",
-        "AI/ML",
-      ],
-    },
-    {
-      title: "Full Stack Developer",
-      image: "/companies/yeabfuture.jpg",
-      company: "Yeab Future",
-      period: "Aug 2024 - Dec 2024",
-      description:
-        "Developed an Event Management System using multitenant architecture to create dashboards for event holders and manage their employees. Implemented features including voucher generation for purchased tickets via email, payment integration with Pespal and bank transfers, and support for event add-ons, activities, and location types.",
-      technologies: [
-        "Next.js",
-        "Express.js",
-        "TypeScript",
-        "Shadcn",
-        "CI/CD",
-        "PM2",
-        "Digital Ocean",
-      ],
-    },
-    {
-      title: "Software Engineer",
-      image: "/companies/peacetechnologies.jpg",
-      company: "Peace Technology Ethiopia",
-      period: "Nov 2023 - May 2024",
-      description:
-        "Established robust client-server communication and addressed security issues for optimized and secure dashboard. Developed Ethiochef E-commerce Web Dashboard using NextJS with TypeScript and Shadcn UI. Maintained backend API using ExpressJS and handled payment gateway integrations. Contributed to collaborative problem-solving and regular code reviews.",
-      technologies: [
-        "Next.js",
-        "Express.js",
-        "TypeScript",
-        "Shadcn",
-        "TailwindCSS",
-        "CI/CD",
-        "Cpanel",
-      ],
-    },
-    {
-      title: "Software Engineer",
-      image: "/companies/mss.jpg",
-      company: "Micro Sun & Solutions PLC",
-      period: "Aug 2023 - May 2024",
-      description:
-        "Accelerated the development of Digital Mekato e-commerce platform by 45% through smart systems management. Implemented user-friendly features ensuring seamless shopping experience. Utilized ShadcnUI for enhanced website appearance and performance. The platform displays and sells local Ethiopian items using Chapa payment gateway.",
-      technologies: [
-        "React.js",
-        "TypeScript",
-        "Shadcn",
-        "TailwindCSS",
-        "CI/CD",
-        "Cpanel",
-      ],
-    },
-    {
-      title: "Frontend Web Developer (Intern)",
-      image: "/companies/codesoftinfotech_logo.jpg",
-      company: "CODESOFT INFOTECH",
-      period: "Aug 2023 - Sep 2023",
-      description:
-        "Built responsive web pages during an internship using HTML, CSS, and JavaScript. Worked with MongoDB to manage data and learned modern frontend development practices.",
-      technologies: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "MongoDB",
-        "Web Applications",
-      ],
-    },
-    {
-      title: "Student Parliament President",
-      image: "/companies/hope.jpg",
-      company: "Hope Enterprise University College",
-      period: "Oct 2021 - Nov 2023",
-      description:
-        "Led the student parliament as Vice President for three semesters and President for one semester, enhancing student life and facilitating effective communication with university administration. Demonstrated commitment to personal and professional growth through adaptive leadership while successfully managing academic commitments and leadership responsibilities.",
-      technologies: [
-        "Leadership",
-        "Communication",
-        "Organization",
-        "Team Management",
-      ],
-    },
-  ];
   return (
-    <section id="experience" className="relative py-20 px-6 bg-background">
+    <section id="experience" className="relative py-24 px-6 bg-background">
       <div className="max-w-screen-md mx-auto">
-        <div className="text-center mb-16">
-          <Badge className="mb-4">Experience</Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
+
+        {/* Section label */}
+        <div className="flex items-center gap-3 mb-10">
+          <span className="h-px flex-1 bg-border max-w-[3rem]" />
+          <span
+            className="text-xs font-semibold uppercase tracking-widest text-primary"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Experience
+          </span>
+        </div>
+
+        {/* Heading */}
+        <div className="mb-14">
+          <h2
+            className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
             Professional Journey
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            A timeline of my professional growth and key achievements
+          <p className="text-muted-foreground text-base max-w-lg leading-relaxed">
+            A timeline of my professional growth and key achievements across companies and roles.
           </p>
         </div>
 
-        <div className="relative">
-          {experiences.map((experience, index) => (
-            <ExperienceItem key={index} {...experience} />
+        {/* Timeline */}
+        <div>
+          {experiences.map((exp, i) => (
+            <ExperienceItem key={i} index={i} {...exp} />
           ))}
         </div>
       </div>

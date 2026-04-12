@@ -1,12 +1,14 @@
-import Image from "next/image";
+"use client";
+import Link from "next/link";
 
 export const Logo = () => (
-  <Image
-    src="/logo-dark.png"
-    alt="Logo"
-    width={40}
-    height={40}
-    className="w-10 h-10"
-    priority
-  />
+  <Link href="/" aria-label="Abel Shibabaw — Home">
+    <span
+      className="text-xl font-bold tracking-tight text-foreground select-none"
+      style={{ fontFamily: "var(--font-heading)" }}
+    >
+      Abel
+      <span className="text-primary">.</span>
+    </span>
+  </Link>
 );

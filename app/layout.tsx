@@ -1,13 +1,20 @@
 import Goku from "@/components/ui/goku";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import type { Metadata, Viewport } from "next";
-import { Lora } from "next/font/google";
+import { Lora, Poppins } from "next/font/google";
 
 import "./globals.css";
 
 const lora = Lora({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  variable: "--font-lora",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
 });
 export const metadata: Metadata = {
   title: "Abel Shibabaw - Senior Full Stack Developer",
@@ -228,8 +235,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${lora.className} antialiased`}>
+    <html
+      lang="en"
+      style={
+        {
+          "--font-heading": `${poppins.style.fontFamily}, ui-sans-serif, system-ui, sans-serif`,
+          "--font-sans": `${lora.style.fontFamily}, ui-serif, Georgia, serif`,
+        } as React.CSSProperties
+      }
+    >
+      <body
+        className={`${lora.variable} ${poppins.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

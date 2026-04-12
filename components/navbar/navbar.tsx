@@ -2,17 +2,25 @@
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toogle";
 import { NavMenu } from "./nav-menu";
+import { NavigationSheet } from "./navigation-sheet";
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-10 top-4 inset-x-4 h-14 bg-background/70 rounded-xl border border-border backdrop-blur-lg max-w-screen-md mx-auto shadow-sm">
-      <div className="h-full flex items-center justify-between mx-auto px-3">
+    <nav className="fixed z-50 top-4 inset-x-4 h-14 max-w-screen-md mx-auto">
+      {/* Glass pill — Claude.ai style */}
+      <div className="h-full flex items-center justify-between px-4 rounded-2xl border border-border/60 bg-background/80 backdrop-blur-xl shadow-sm">
         <Logo />
 
-        {/* Desktop Menu */}
-        <div className="flex items-center gap-4">
-          <NavMenu className="hidden md:block" />
+        {/* Desktop links */}
+        <NavMenu className="hidden md:flex" />
+
+        {/* Right controls */}
+        <div className="flex items-center gap-2">
           <ModeToggle />
+          {/* Mobile menu */}
+          <div className="md:hidden">
+            <NavigationSheet />
+          </div>
         </div>
       </div>
     </nav>
