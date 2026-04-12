@@ -21,7 +21,7 @@ const Goku = () => {
         }
       }}
       whileHover={{ scale: 1.05, filter: "brightness(1.2)" }}
-      className="cursor-target fixed bottom-4 right-0 z-0 max-md:hidden pointer-events-auto"
+      className="cursor-target fixed bottom-4 right-0 z-100 max-md:hidden pointer-events-auto"
     >
       <Image
         src="/anime/goku-sleeping.png"
