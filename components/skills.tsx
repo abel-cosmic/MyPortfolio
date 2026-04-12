@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn } from "@/components/ui/fade-in";
 
 const skills = [
@@ -47,9 +48,11 @@ const MarqueeRow = ({ items, reverse = false }: { items: typeof skills; reverse?
           key={index}
           className="cursor-target flex items-center gap-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm px-5 py-3 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(var(--primary),0.2)] hover:bg-card transition-all duration-300 group"
         >
-          <img
+          <Image
             src={skill.icon}
             alt={`${skill.name} icon`}
+            width={24}
+            height={24}
             className="w-6 h-6 object-contain filter drop-shadow-sm dark:brightness-150 group-hover:scale-110 transition-transform duration-300"
           />
           <span

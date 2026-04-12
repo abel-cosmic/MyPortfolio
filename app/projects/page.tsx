@@ -28,7 +28,7 @@ export default function ProjectsPage() {
             All Projects
           </h1>
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
-            A complete collection of the applications and systems I've built, exploring different architectures and technologies.
+            A complete collection of the applications and systems I&apos;ve built, exploring different architectures and technologies.
           </p>
         </FadeIn>
 

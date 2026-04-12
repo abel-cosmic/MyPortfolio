@@ -40,7 +40,7 @@ const Footer = () => {
               className="text-xs font-semibold uppercase tracking-widest text-primary"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Let's Connect
+              Let&apos;s Connect
             </span>
             <h2
               className="text-3xl md:text-4xl font-bold text-foreground tracking-tight max-w-sm leading-tight"
