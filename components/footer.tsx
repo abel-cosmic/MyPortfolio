@@ -55,13 +55,22 @@ const Footer = () => {
               Whether it&apos;s a new product, a complex backend, or just a conversation — my inbox
               is always open.
             </p>
-            <a
-              href="mailto:abelshibabaw03@gmail.com"
-              className="cursor-target inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(var(--primary),0.5)] transition-all duration-300 shadow-sm"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Say Hello →
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="mailto:abelshibabaw291@gmail.com"
+                className="cursor-target inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(var(--primary),0.5)] transition-all duration-300 shadow-sm"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Email Me →
+              </a>
+              <a
+                href="tel:+251913174185"
+                className="cursor-target inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-2.5 text-sm font-semibold hover:bg-accent transition-all duration-300"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Call +251 913 174 185
+              </a>
+            </div>
           </div>
         </FadeIn>
 

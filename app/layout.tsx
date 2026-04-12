@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 
 import "./globals.css";
 import TargetCursor from "@/components/ui/target-cursor";
+import Footer from "@/components/footer";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -176,6 +177,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Goku />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

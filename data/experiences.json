@@ -1,13 +1,19 @@
 [
   {
     "title": "Fullstack Engineer",
-    "image": "/companies/safaricom_ethiopia_logo.jfif",
+    "image": "/companies/safaricom_ethiopia_logo.png",
     "company": "Safaricom Telecommunication PLC",
     "location": "Addis Ababa, Ethiopia",
     "type": "On Site · Full time",
     "period": "Dec 2025 – Present",
     "description": "Hired by Gebeya as a vendor to work in the digital channels team at Safaricom, submitting and working on fullstack in-house projects related to the internet provider infrastructure.",
-    "technologies": ["Next.js", "NestJS", "TypeScript", "TailwindCSS", "PostgreSQL"]
+    "technologies": [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "TailwindCSS",
+      "PostgreSQL"
+    ]
   },
   {
     "title": "Front End Engineer",
@@ -27,7 +33,13 @@
     "type": "Remote · Part time",
     "period": "Jun 2025 – Jul 2025",
     "description": "Worked on Lussia — a student-focused chat platform with gamification features to help students ace exams and improve results through question-based scoring and interactive learning.",
-    "technologies": ["Next.js", "NestJS", "Apollo GraphQL", "TypeScript", "TailwindCSS"]
+    "technologies": [
+      "Next.js",
+      "NestJS",
+      "Apollo GraphQL",
+      "TypeScript",
+      "TailwindCSS"
+    ]
   },
   {
     "title": "Fullstack Engineer",
@@ -37,7 +49,16 @@
     "type": "Remote · Full time",
     "period": "Feb 2025 – May 2025",
     "description": "Worked with one of the greatest teams creating an automation studio for pipelines, vector databases, chat interfaces with documents, and synthetic data generation. Used an in-house fine-tuned AI model. Also developed a Medical Assessment App, Meal Planner, and Eido Movie/Music Recommendation app.",
-    "technologies": ["Next.js", "NestJS", "Apollo GraphQL", "Express.js", "TypeScript", "TailwindCSS", "React Native", "AI/ML"]
+    "technologies": [
+      "Next.js",
+      "NestJS",
+      "Apollo GraphQL",
+      "Express.js",
+      "TypeScript",
+      "TailwindCSS",
+      "React Native",
+      "AI/ML"
+    ]
   },
   {
     "title": "Senior Fullstack Developer",
@@ -47,7 +68,19 @@
     "type": "Remote · Full time",
     "period": "Apr 2024 – Oct 2024",
     "description": "Designed and developed an ERP system for a University College — managing classes, examinations, registration, and school fees — increasing student interactivity by 65%. Also built a Content Management System and landing page hosted on Digital Ocean VPS.",
-    "technologies": ["TypeScript", "Next.js", "NestJS", "TailwindCSS", "CI/CD", "Kubernetes", "Microservices", "Digital Ocean", "PayloadCMS", "GraphQL", "Docker"]
+    "technologies": [
+      "TypeScript",
+      "Next.js",
+      "NestJS",
+      "TailwindCSS",
+      "CI/CD",
+      "Kubernetes",
+      "Microservices",
+      "Digital Ocean",
+      "PayloadCMS",
+      "GraphQL",
+      "Docker"
+    ]
   },
   {
     "title": "Full Stack Developer",
@@ -57,7 +90,15 @@
     "type": "Remote · Full time",
     "period": "Aug 2024 – Dec 2024",
     "description": "Built a multi-tenant Event Management System with dashboards for event holders and employees. Implemented voucher generation for purchased tickets, Pespal and bank payment methods, and event add-ons, activities, and location types.",
-    "technologies": ["TypeScript", "Shadcn", "Next.js", "CI/CD", "PM2", "Express.js", "Digital Ocean"]
+    "technologies": [
+      "TypeScript",
+      "Shadcn",
+      "Next.js",
+      "CI/CD",
+      "PM2",
+      "Express.js",
+      "Digital Ocean"
+    ]
   },
   {
     "title": "Software Engineer",
@@ -67,7 +108,14 @@
     "type": "Remote · Full time",
     "period": "Aug 2023 – May 2024",
     "description": "Accelerated development of the Digital Mekato e-commerce platform by 45% through smart systems. Implemented user-friendly features for a seamless shopping experience. The platform lists local Ethiopian items and processes payments via Chapa gateway.",
-    "technologies": ["TypeScript", "Shadcn", "TailwindCSS", "CI/CD", "React.js", "Cpanel"]
+    "technologies": [
+      "TypeScript",
+      "Shadcn",
+      "TailwindCSS",
+      "CI/CD",
+      "React.js",
+      "Cpanel"
+    ]
   },
   {
     "title": "Software Engineer",
@@ -77,7 +125,15 @@
     "type": "Remote · Part Time",
     "period": "Nov 2023 – May 2024",
     "description": "Established robust client-server communication addressing security issues for an optimised dashboard. Developed the Ethiochef E-commerce Web Dashboard using Next.js with TypeScript and ShadcnUI. Maintained backend API and payment gateway integrations.",
-    "technologies": ["TypeScript", "Shadcn", "TailwindCSS", "CI/CD", "Next.js", "Express.js", "Cpanel"]
+    "technologies": [
+      "TypeScript",
+      "Shadcn",
+      "TailwindCSS",
+      "CI/CD",
+      "Next.js",
+      "Express.js",
+      "Cpanel"
+    ]
   },
   {
     "title": "Student Parliament President",
@@ -87,6 +143,11 @@
     "type": "Student Life · Academics",
     "period": "Oct 2021 – Nov 2023",
     "description": "Led the student parliament — Vice President for three semesters, President for one — enhancing student life and communication with university administration. Demonstrated exceptional adaptive leadership while managing full academic and leadership responsibilities.",
-    "technologies": ["Leadership", "Communication", "Organization", "Team Management"]
+    "technologies": [
+      "Leadership",
+      "Communication",
+      "Organization",
+      "Team Management"
+    ]
   }
 ]

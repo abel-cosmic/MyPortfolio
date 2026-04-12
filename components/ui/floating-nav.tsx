@@ -2,16 +2,35 @@
 
 import Link from "next/link";
 import { Briefcase, Code } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
 
 export const FloatingNav = () => {
+  const { scrollY } = useScroll();
+  const [visible, setVisible] = useState(true);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 10) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+  });
+
   return (
     <>
       {/* Floating Scroll Navigation - Left */}
       <motion.div
         initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        animate={{ 
+          x: visible ? 0 : -100, 
+          opacity: visible ? 1 : 0 
+        }}
+        transition={{ 
+          duration: 0.5, 
+          ease: [0.16, 1, 0.3, 1],
+          delay: visible ? 0.5 : 0 // Shorter delay for cleaner feel
+        }}
         className="fixed left-0 top-[65%] md:top-1/2 -translate-y-1/2 z-50 flex"
       >
         <Link
@@ -32,8 +51,15 @@ export const FloatingNav = () => {
       {/* Floating Scroll Navigation - Right */}
       <motion.div
         initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        animate={{ 
+          x: visible ? 0 : 100, 
+          opacity: visible ? 1 : 0 
+        }}
+        transition={{ 
+          duration: 0.5, 
+          ease: [0.16, 1, 0.3, 1],
+          delay: visible ? 0.7 : 0 // Slight stagger from left
+        }}
         className="fixed right-0 top-[65%] md:top-1/2 -translate-y-1/2 z-50 flex"
       >
         <Link

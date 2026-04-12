@@ -75,7 +75,10 @@ const About = () => {
                 <Button
                   variant="outline"
                   className="h-11 rounded-full border-border hover:bg-accent hover:border-primary/50 transition-all duration-300 px-6"
-                  onClick={() => push("mailto:abelshibabaw03@gmail.com")}
+                  onClick={() => {
+                    const footer = document.getElementById('footer');
+                    footer?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   <Mail className="mr-2 h-4 w-4" />
                   Get in Touch
