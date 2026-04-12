@@ -20,7 +20,7 @@ const About = () => {
   const { push } = useRouter(); 
 
   return (
-    <section id="about" className="relative py-24 px-6 bg-background overflow-hidden">
+    <section id="about" className="relative py-16 md:py-24 px-4 md:px-6 bg-background overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-2xl max-h-2xl bg-primary/5 rounded-full blur-3xl -z-10" />
 

@@ -37,7 +37,7 @@ const awardsDetails = [
 
 const Education = () => {
   return (
-    <section id="education" className="relative py-24 px-6 bg-background">
+    <section id="education" className="relative py-16 md:py-24 px-4 md:px-6 bg-background">
       <div className="max-w-screen-md mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Education Column */}

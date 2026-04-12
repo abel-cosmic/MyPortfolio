@@ -121,7 +121,7 @@ const Experience = () => {
   const topExperiences = experiences.slice(0, 3);
 
   return (
-    <section id="experience" className="relative py-24 px-6 bg-background">
+    <section id="experience" className="relative py-16 md:py-24 px-4 md:px-6 bg-background">
       <div className="max-w-screen-md mx-auto">
 
         {/* Section label */}

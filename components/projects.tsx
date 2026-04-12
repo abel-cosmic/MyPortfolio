@@ -165,7 +165,7 @@ const Projects = () => {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section id="projects" className="relative py-24 px-6 ">
+    <section id="projects" className="relative py-16 md:py-24 px-4 md:px-6 ">
       <div className="max-w-screen-md mx-auto">
         {/* Section label */}
         <FadeIn direction="up">

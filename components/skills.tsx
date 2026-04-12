@@ -69,7 +69,7 @@ const MarqueeRow = ({ items, reverse = false }: { items: typeof skills; reverse?
 
 const Skills = () => {
   return (
-    <section id="skills" className="relative py-24 px-6 bg-background overflow-hidden">
+    <section id="skills" className="relative py-16 md:py-24 px-4 md:px-6 bg-background overflow-hidden">
       <div className="max-w-screen-md mx-auto">
         {/* Section label */}
         <FadeIn direction="up">

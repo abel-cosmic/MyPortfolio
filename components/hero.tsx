@@ -16,7 +16,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background px-6 pt-28 pb-16 md:pt-32">
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background px-4 md:px-6 pt-20 pb-12 md:pt-32 md:pb-16">
       {/* Aceternity Spotlight Effect */}
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="var(--primary)" />
 

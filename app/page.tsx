@@ -8,7 +8,7 @@ import { FloatingNav } from "@/components/ui/floating-nav";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative flex flex-col gap-16 md:gap-0">
       <Hero />
       <About />
       <Skills />

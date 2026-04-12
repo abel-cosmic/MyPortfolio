@@ -22,7 +22,7 @@ export const DownloadCV = ({
             <div className="w-[50px] h-full flex items-center justify-center relative">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pt-[6px] pr-1 pl-1">
                     <Folder
-                        size={0.3}
+                        size={0.2}
                         color="var(--primary)"
                         isHovered={isFolderHovered}
                         items={[
