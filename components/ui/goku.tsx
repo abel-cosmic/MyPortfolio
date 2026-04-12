@@ -1,19 +1,45 @@
-"use client";
-import { useTheme } from "next-themes";
+"use client"
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Goku = () => {
-  const { theme } = useTheme();
   return (
-    <div className="fixed bottom-4 right-0 z-0 max-md:hidden">
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ 
+        y: [0, -15, 0],
+        opacity: 1
+      }}
+      transition={{ 
+        y: {
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        },
+        opacity: {
+          duration: 1
+        }
+      }}
+      whileHover={{ scale: 1.05, filter: "brightness(1.2)" }}
+      className="cursor-target fixed bottom-4 right-0 z-0 max-md:hidden pointer-events-auto"
+    >
       <Image
-        src={theme === "dark" ? "/anime/goku-sleeping.png" : "/anime/goku.png"}
+        src="/anime/goku-sleeping.png"
         alt="Anime touch"
         width={240}
         height={240}
-        className="transition-opacity duration-300"
+        className="hidden dark:block transition-opacity duration-300"
+        priority
       />
-    </div>
+      <Image
+        src="/anime/goku.png"
+        alt="Anime touch"
+        width={240}
+        height={240}
+        className="block dark:hidden transition-opacity duration-300"
+        priority
+      />
+    </motion.div>
   );
 };
 

@@ -1,9 +1,12 @@
 import Goku from "@/components/ui/goku";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import StructuredData from "@/components/structured-data";
 import type { Metadata, Viewport } from "next";
 import { Lora, Poppins } from "next/font/google";
+import Navbar from "@/components/navbar";
 
 import "./globals.css";
+import TargetCursor from "@/components/ui/target-cursor";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -103,9 +106,6 @@ export const metadata: Metadata = {
       "msvalidate.01": "your-bing-verification-code",
     },
   },
-  category: "Technology",
-  classification: "Business",
-  referrer: "strict-origin-when-cross-origin",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -125,96 +125,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+  category: "Technology",
+  classification: "Software Engineering",
+  referrer: "strict-origin-when-cross-origin",
   manifest: "/site.webmanifest",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Abel Shibabaw Portfolio",
-  },
-  other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Abel Shibabaw",
-      jobTitle: "Senior Full Stack Developer",
-      url: "https://abels-porfolio.vercel.app",
-      sameAs: [
-        "https://github.com/abel-cosmic",
-        "https://www.linkedin.com/in/abel-shibabaw-4b3b6125a/",
-        "https://telegram.me/abel_cosmic",
-      ],
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "Ethiopia",
-      },
-      knowsAbout: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Node.js",
-        "MongoDB",
-        "PostgreSQL",
-        "Redis",
-        "Apollo GraphQL",
-        "PayloadCMS",
-        "ShadcnUI",
-        "better-auth",
-        "TailwindCSS",
-        "ChakraUI",
-        "Nextjs",
-        "NestJS",
-        "ExpressJS",
-        "SocketIO",
-        "JavaScript",
-        "Java",
-        "C++",
-        "HTML5",
-        "CSS3",
-        "Python",
-        "FastAPI",
-        "MySQL",
-        "SQLite",
-        "Firebase",
-        "AWS",
-        "Vercel",
-        "Docker",
-        "Kubernetes",
-        "Git",
-        "GitHub",
-        "CI/CD",
-        "REST APIs",
-        "GraphQL",
-        "Microservices",
-        "Serverless",
-        "WebSockets",
-        "Responsive Design",
-        "Progressive Web Apps",
-        "SEO",
-        "Performance Optimization",
-        "Cross-browser Compatibility",
-        "Agile Development",
-        "Scrum",
-        "Test-Driven Development",
-        "Unit Testing",
-        "Integration Testing",
-        "Debugging",
-        "Code Review",
-        "Mentoring",
-        "Team Leadership",
-        "Project Management",
-        "Remote Work",
-        "Full Stack Development",
-        "Frontend Development",
-        "Backend Development",
-        "Web Development",
-        "Software Engineering",
-        "Problem Solving",
-        "Analytical Thinking",
-        "Continuous Learning",
-        "Innovation",
-      ],
-    }),
-  },
 };
 
 export const viewport: Viewport = {
@@ -247,11 +161,19 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${poppins.variable} antialiased`}
       >
+        <TargetCursor
+          spinDuration={2}
+          hideDefaultCursor
+          parallaxOn
+          hoverDuration={0.2}
+        />
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           disableTransitionOnChange
         >
+          <StructuredData />
+          <Navbar />
           <main>{children}</main>
           <Goku />
         </ThemeProvider>
@@ -259,3 +181,4 @@ export default function RootLayout({
     </html>
   );
 }
+

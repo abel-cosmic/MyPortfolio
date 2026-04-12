@@ -1,74 +1,79 @@
 "use client";
-import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { CircleArrowDown, Download } from "lucide-react";
+import { FadeInItem, FadeInStagger } from "@/components/ui/fade-in";
+import { Spotlight } from "@/components/ui/spotlight";
+import { CircleArrowDown } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { DownloadCV } from "./ui/download-resume";
+import RotatingText from "./ui/RotatingText";
 
 const Hero = () => {
-  const { push } = useRouter();
+  const words = [
+    "Digital Solutions",
+    "Scalable Systems",
+    "Cloud Architectures",
+    "Smart Automation",
+  ];
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background px-6 pt-28 pb-16 md:pt-32">
-      {/* Subtle warm grid */}
-      <AnimatedGridPattern
-        numSquares={80}
-        maxOpacity={0.12}
-        duration={2}
-        className={cn(
-          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
-          "inset-x-0 h-full skew-y-12"
-        )}
-      />
+      {/* Aceternity Spotlight Effect */}
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="var(--primary)" />
 
-      {/* Main content */}
-      <div className="relative z-[1] flex flex-col items-center text-center gap-6 max-w-2xl w-full">
+      {/* Main content - Wrapped in Stagger */}
+      <FadeInStagger className="relative z-[1] flex flex-col items-center text-center gap-6 max-w-4xl w-full">
 
         {/* Availability chip */}
-        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-xs">
-          <span className="relative flex h-2 w-2 flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+        <FadeInItem>
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-xs hover:shadow-[0_0_15px_rgba(var(--primary),0.2)] transition-shadow">
+            <span className="relative flex h-2 w-2 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
+            Available for new projects
           </span>
-          Available for new projects
-        </span>
+        </FadeInItem>
 
-        {/* Headline — comma kept outside gradient span */}
-        <h1
-          className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.15] tracking-tight text-foreground"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Building Tomorrow&apos;s{" "}
-          <br className="hidden sm:block" />
-          <span
-            style={{
-              background: "linear-gradient(135deg, var(--foreground) 0%, var(--primary) 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
+        {/* Headline */}
+        <FadeInItem>
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.25] tracking-tight text-foreground flex flex-wrap justify-center gap-x-3 gap-y-2 md:gap-y-4"
+            style={{ fontFamily: "var(--font-heading)" }}
           >
-            Digital Solutions
-          </span>
-          , Today
-        </h1>
+            <span className="whitespace-nowrap">Building Tomorrow&apos;s</span>
+            <RotatingText
+              texts={words}
+              mainClassName="px-2 sm:px-2 md:px-4 bg-primary text-white overflow-hidden py-0.5 sm:py-1 md:py-1.5 justify-center rounded-xl"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={3000}
+            />
+            <span>Today</span>
+          </h1>
+        </FadeInItem>
 
         {/* Sub-copy */}
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
-          I&apos;m{" "}
-          <span className="font-semibold text-foreground">Abel Shibabaw</span>, a Fullstack
-          Software Engineer specialising in enterprise-grade web applications and AI-powered solutions.
-          From engineering digital channels for telecommunications to architecting advanced AI
-          automation platforms and scalable ERP systems — I turn complex technical challenges into
-          elegant, impactful digital experiences.
-        </p>
+        <FadeInItem>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
+            I&apos;m{" "}
+            <span className="font-semibold text-foreground">Abel Shibabaw</span>, a Fullstack
+            Software Engineer specialising in enterprise-grade web applications and AI-powered solutions.
+            From engineering digital channels for telecommunications to architecting advanced AI
+            automation platforms and scalable ERP systems — I turn complex technical challenges into
+            elegant, impactful digital experiences.
+          </p>
+        </FadeInItem>
 
-        {/* CTAs — stacked on mobile, side-by-side on sm+ */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto sm:justify-center">
+        {/* CTAs */}
+        <FadeInItem className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto sm:justify-center items-center">
           <Button
             size="lg"
-            className="rounded-full shadow-md hover:shadow-lg transition-shadow w-full sm:w-auto"
+            className="rounded-full shadow-md hover:shadow-[0_0_20px_rgba(var(--primary),0.4)] transition-all duration-300 w-full sm:w-auto"
             asChild
           >
             <Link href="#projects" className="flex items-center justify-center gap-2">
@@ -76,21 +81,10 @@ const Hero = () => {
             </Link>
           </Button>
 
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-full border-border hover:bg-accent transition-colors w-full sm:w-auto"
-            onClick={() =>
-              push(
-                "https://drive.google.com/file/d/15c9n9088TWLZ_IaRW7ykweaSZjHlZjyL/view?usp=sharing"
-              )
-            }
-          >
-            <Download className="h-4 w-4 mr-2" />
-            Download CV
-          </Button>
-        </div>
-      </div>
+          {/* Resume Folder CTA */}
+         <DownloadCV title="My Resumes"/>
+        </FadeInItem>
+      </FadeInStagger>
     </div>
   );
 };

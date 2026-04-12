@@ -1,3 +1,5 @@
+import { FadeIn } from "@/components/ui/fade-in";
+
 const skills = [
   { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
   { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
@@ -37,22 +39,21 @@ const fourthRow = skills.slice(21);
 const MarqueeRow = ({ items, reverse = false }: { items: typeof skills; reverse?: boolean }) => {
   return (
     <div
-      className={`flex w-max ${
-        reverse ? "animate-marquee-reverse" : "animate-marquee"
-      } hover:[animation-play-state:paused] whitespace-nowrap gap-4 px-4 items-center mb-4 last:mb-0`}
+      className={`flex w-max ${reverse ? "animate-marquee-reverse" : "animate-marquee"
+        } hover:[animation-play-state:paused] whitespace-nowrap gap-4 px-4 items-center mb-4 last:mb-0`}
     >
       {[...items, ...items, ...items, ...items].map((skill, index) => (
         <div
           key={index}
-          className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-3 hover:border-primary/30 hover:shadow-md transition-all duration-300"
+          className="cursor-target flex items-center gap-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm px-5 py-3 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(var(--primary),0.2)] hover:bg-card transition-all duration-300 group"
         >
           <img
             src={skill.icon}
             alt={`${skill.name} icon`}
-            className="w-6 h-6 object-contain filter drop-shadow-sm dark:brightness-150"
+            className="w-6 h-6 object-contain filter drop-shadow-sm dark:brightness-150 group-hover:scale-110 transition-transform duration-300"
           />
           <span
-            className="text-sm font-semibold text-foreground whitespace-nowrap"
+            className="text-sm font-semibold text-foreground whitespace-nowrap group-hover:text-primary transition-colors duration-300"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {skill.name}
@@ -68,44 +69,50 @@ const Skills = () => {
     <section id="skills" className="relative py-24 px-6 bg-background overflow-hidden">
       <div className="max-w-screen-md mx-auto">
         {/* Section label */}
-        <div className="flex items-center gap-3 mb-10">
-          <span className="h-px flex-1 bg-border max-w-[3rem]" />
-          <span
-            className="text-xs font-semibold uppercase tracking-widest text-primary"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Technical Skills
-          </span>
-        </div>
+        <FadeIn direction="up">
+          <div className="flex items-center gap-3 mb-10">
+            <span className="h-px flex-1 bg-border max-w-[3rem]" />
+            <span
+              className="text-xs font-semibold uppercase tracking-widest text-primary"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Technical Skills
+            </span>
+          </div>
+        </FadeIn>
 
         {/* Heading */}
-        <div className="mb-12">
-          <h2
-            className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Tools & Technologies
-          </h2>
-          <p className="text-muted-foreground text-base max-w-lg leading-relaxed">
-            A curated set of technologies I use to build reliable, scalable, and modern digital
-            products.
-          </p>
-        </div>
+        <FadeIn direction="up" delay={0.1}>
+          <div className="mb-12">
+            <h2
+              className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Tools & Technologies
+            </h2>
+            <p className="text-muted-foreground text-base max-w-lg leading-relaxed">
+              A curated set of technologies I use to build reliable, scalable, and modern digital
+              products.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Infinite Marquee Grid container */}
-        <div
-          className="relative flex flex-col overflow-hidden w-full group"
-          style={{
-            maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-          }}
-        >
-          <MarqueeRow items={firstRow} />
-          <MarqueeRow items={secondRow} reverse />
-          <MarqueeRow items={thirdRow} />
-          <MarqueeRow items={fourthRow} reverse />
-        </div>
+        <FadeIn direction="up" delay={0.2} className="relative">
+          <div
+            className="relative flex flex-col w-full group"
+            style={{
+              maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            }}
+          >
+            <MarqueeRow items={firstRow} />
+            <MarqueeRow items={secondRow} reverse />
+            <MarqueeRow items={thirdRow} />
+            <MarqueeRow items={fourthRow} reverse />
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
