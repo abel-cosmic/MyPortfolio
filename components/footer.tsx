@@ -10,6 +10,8 @@ const footerLinks = [
   { title: "Projects", href: "#projects" },
 ];
 
+
+
 const socialLinks = [
   {
     label: "GitHub",
