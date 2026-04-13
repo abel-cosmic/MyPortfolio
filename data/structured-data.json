@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abel Shibabaw",
+  "jobTitle": "Senior Full Stack Developer",
+  "url": "https://abels-porfolio.vercel.app",
+  "sameAs": [
+    "https://github.com/abel-cosmic",
+    "https://www.linkedin.com/in/abel-shibabaw-4b3b6125a/",
+    "https://telegram.me/abel_cosmic"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Ethiopia"
+  },
+  "knowsAbout": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "Apollo GraphQL",
+    "PayloadCMS",
+    "ShadcnUI",
+    "better-auth",
+    "TailwindCSS",
+    "Nextjs",
+    "NestJS",
+    "ExpressJS",
+    "JavaScript",
+    "Python",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Vercel",
+    "CI/CD",
+    "SEO",
+    "Performance Optimization"
+  ],
+  "description": "Expert Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Building scalable web applications with 5+ years of experience.",
+  "image": "https://abels-porfolio.vercel.app/profile.jpg"
+}

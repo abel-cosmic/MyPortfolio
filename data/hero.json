@@ -1,0 +1,25 @@
+{
+  "availabilityChip": "Available for new projects",
+  "rotatingWords": [
+    "Digital Solutions",
+    "Scalable Systems",
+    "Cloud Architectures",
+    "Smart Automation"
+  ],
+  "headline": {
+    "line1": "Building Tomorrow's",
+    "line2Suffix": "Today"
+  },
+  "subcopyParts": [
+    { "text": "I'm " },
+    { "text": "Abel Shibabaw", "emphasis": true },
+    {
+      "text": ", a Fullstack Software Engineer specialising in enterprise-grade web applications and AI-powered solutions. From engineering digital channels for telecommunications to architecting advanced AI automation platforms and scalable ERP systems — I turn complex technical challenges into elegant, impactful digital experiences."
+    }
+  ],
+  "primaryCta": {
+    "label": "View My Work",
+    "href": "#projects"
+  },
+  "resumeCtaTitle": "My Resumes"
+}

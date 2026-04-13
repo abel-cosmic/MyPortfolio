@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { ExperienceItem, experiences } from "@/components/experience";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
+import { ExperienceItem } from "@/components/cards/experience-card";
+import { experiences } from "@/layouts/experience";
 
 export default function ExperiencePage() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
   const filterOptions = useMemo(() => {
     const types = new Set<string>();
-    experiences.forEach(exp => {
+    experiences.forEach((exp) => {
       if (exp.type) types.add(exp.type);
     });
     return ["All", ...Array.from(types)];
@@ -18,14 +19,17 @@ export default function ExperiencePage() {
 
   const filteredExperiences = useMemo(() => {
     if (activeFilter === "All") return experiences;
-    return experiences.filter(exp => exp.type === activeFilter);
+    return experiences.filter((exp) => exp.type === activeFilter);
   }, [activeFilter]);
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 bg-background">
       <div className="max-w-screen-md mx-auto">
         <FadeIn direction="up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground" style={{ fontFamily: "var(--font-heading)" }}>
+          <h1
+            className="text-4xl md:text-5xl font-bold mb-6 text-foreground"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
             Professional Journey
           </h1>
           <p className="text-muted-foreground text-lg mb-12">
@@ -50,13 +54,20 @@ export default function ExperiencePage() {
           </div>
         </FadeIn>
 
-        <div className="relative">
-           {filteredExperiences.map((exp, i) => (
-              <ExperienceItem key={i} index={i} {...exp} />
-           ))}
-           {filteredExperiences.length === 0 && (
-              <p className="text-muted-foreground text-center py-10">No experiences found for this filter.</p>
-           )}
+        <div className="space-y-6">
+          {filteredExperiences.map((exp, i) => (
+            <FadeIn key={`${exp.company}-${exp.title}-${i}`} direction="up" delay={i * 0.05}>
+              <ExperienceItem
+                {...exp}
+                isLast={i === filteredExperiences.length - 1}
+              />
+            </FadeIn>
+          ))}
+          {filteredExperiences.length === 0 && (
+            <p className="text-muted-foreground text-center py-10">
+              No experiences found for this filter.
+            </p>
+          )}
         </div>
       </div>
     </div>

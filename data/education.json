@@ -1,0 +1,33 @@
+{
+  "educationColumnLabel": "Education",
+  "awardsColumnLabel": "Certificates & Awards",
+  "education": [
+    {
+      "institution": "Hope Enterprise University College",
+      "degree": "Bachelor of Science, Computer Science",
+      "detail": "GPA: >= 3.8"
+    },
+    {
+      "institution": "Neway Challenge Academy",
+      "degree": "High School",
+      "detail": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Certificate of Appreciation for Bright Ethiopia Hackathon",
+      "date": "March 8, 2024",
+      "description": "Participated in a 24-hour hackathon, showcasing exceptional problem-solving skills in a high-pressure environment. Contributed to the development of a digital product addressing a real-life challenge."
+    },
+    {
+      "title": "Hope Enterprise University College First Coding Competition",
+      "date": "May 16, 2023",
+      "description": "Secured 1st place in the ICT Club's first-ever coding competition, demonstrating exceptional coding skills, creative problem-solving abilities, and innovation in developing a cutting-edge solution. The winning project reflected a deep understanding of industry best practices and emerging technologies."
+    },
+    {
+      "title": "Certificate of Appreciation in Kibur College Hackathon Competition",
+      "date": "February 21, 2023",
+      "description": "Recognized for outstanding performance, earning 3rd place in a 24-hour competition. Demonstrated exceptional problem-solving skills and teamwork."
+    }
+  ]
+}

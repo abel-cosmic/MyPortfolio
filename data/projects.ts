@@ -1,3 +1,5 @@
+import projectsData from "./projects.json";
+
 export interface ProjectProps {
   title: string;
   description: string;
@@ -7,53 +9,11 @@ export interface ProjectProps {
   githubUrl?: string;
 }
 
-export const projects: ProjectProps[] = [
-  {
-    title: "Hope Enterprise University College — CMS",
-    description:
-      "Redesigned and implemented the HEUC website using PayloadCMS. Highlights HEUC's vision, mission, objectives, and latest updates with an intuitive interface built on ShadcnUI + TailwindCSS.",
-    image: "/projects/heuc.png",
-    technologies: ["Next.js", "TypeScript", "PayloadCMS", "PostgreSQL", "TailwindCSS", "ShadcnUI"],
-    liveUrl: "https://www.heuc.edu.et/",
-  },
-  {
-    title: "Sion Football Academy Website",
-    description:
-      "Official website showcasing the Academy's mission, training programs, gallery, team, and contact info — designed to attract players, partners, and supporters.",
-    image: "/projects/sion-academy.png",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Vercel", "GoDaddy", "Resend"],
-    liveUrl: "https://www.sionfootballacademy.pro",
-  },
-  {
-    title: "Nucleus Institute",
-    description:
-      "Automation studio for pipelines, vector databases, chat interfaces and synthetic data generation powered by an in-house fine-tuned AI model.",
-    image: "/projects/nucleusinsititute.png",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "NestJS", "Apollo GraphQL", "Express.js"],
-    liveUrl: "https://nucleusinstitute.com/",
-  },
-  {
-    title: "Ethiochef — Recipe Management System",
-    description:
-      "Meal recipe app for 200k+ users with CI/CD pipelines (40% faster releases), Redis optimisations (60% speed boost), and Chapa/ETSwitch payment integrations.",
-    image: "/projects/ethiochef.png",
-    technologies: ["Next.js", "TypeScript", "ExpressJS", "MySQL", "TailwindCSS", "ShadcnUI", "Redis"],
-    liveUrl: "https://www.ethiochef.com/",
-  },
-  {
-    title: "Digital Merkato",
-    description:
-      "Admin dashboard with full CRUD operations for an Ethiopian e-commerce platform. Leverages React.js, Tailwind CSS, and Shadcn UI for smooth data management.",
-    image: "/projects/digitalmerkato.webp",
-    technologies: ["ReactJS", "TypeScript", "TailwindCSS", "Laravel", "ShadcnUI"],
-    liveUrl: "https://digitalmerkato.co/",
-  },
-  {
-    title: "Chains Charity",
-    description:
-      "A React-based charity website to mobilise support for breaking the cycle of poverty. Features localisation in both Amharic and English.",
-    image: "/projects/chainscharity.webp",
-    technologies: ["ReactJS", "TypeScript", "TailwindCSS"],
-    liveUrl: "https://chains-charity.vercel.app/",
-  },
-];
+export const projectsSection = {
+  label: projectsData.sectionLabel,
+  heading: projectsData.heading,
+  description: projectsData.description,
+  viewAllLabel: projectsData.viewAllLabel,
+} as const;
+
+export const projects: ProjectProps[] = projectsData.projects;

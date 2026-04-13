@@ -1,0 +1,32 @@
+{
+  "cta": {
+    "eyebrow": "Let's Connect",
+    "headlineBefore": "Ready to bring your next ",
+    "headlineHighlight": "vision",
+    "headlineAfter": " to life?",
+    "body": "I'm currently open to new opportunities and collaborations. Whether you have a specific project or just want to chat, feel free to reach out."
+  },
+  "contact": {
+    "email": {
+      "label": "Email",
+      "address": "abelshibabaw291@gmail.com",
+      "href": "mailto:abelshibabaw291@gmail.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "display": "+251 913 174 185",
+      "href": "tel:+251913174185"
+    }
+  },
+  "footerLinks": [
+    { "title": "About", "href": "#about" },
+    { "title": "Experience", "href": "#experience" },
+    { "title": "Projects", "href": "#projects" }
+  ],
+  "socialLinks": [
+    { "label": "GitHub", "href": "https://github.com/abel-cosmic", "icon": "github" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/abel-shibabaw-4b3b6125a/", "icon": "linkedin" },
+    { "label": "Telegram", "href": "https://telegram.me/abel_cosmic", "icon": "telegram" }
+  ],
+  "copyrightTemplate": "© {{year}} Abel Shibabaw — Crafted with Passion"
+}

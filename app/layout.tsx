@@ -1,13 +1,13 @@
 import Goku from "@/components/ui/goku";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import StructuredData from "@/components/structured-data";
+import StructuredData from "@/layouts/structured-data";
 import type { Metadata, Viewport } from "next";
 import { Lora, Poppins } from "next/font/google";
 import Navbar from "@/components/navbar";
 
 import "./globals.css";
 import TargetCursor from "@/components/ui/target-cursor";
-import Footer from "@/components/footer";
+import Footer from "@/layouts/footer";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -159,9 +159,7 @@ export default function RootLayout({
         } as React.CSSProperties
       }
     >
-      <body
-        className={`${lora.variable} ${poppins.variable} antialiased`}
-      >
+      <body className={`${lora.variable} ${poppins.variable} antialiased`}>
         <TargetCursor
           spinDuration={2}
           hideDefaultCursor
@@ -183,4 +181,3 @@ export default function RootLayout({
     </html>
   );
 }
-

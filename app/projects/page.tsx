@@ -1,34 +1,38 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { ProjectCard } from "@/components/projects";
 import { projects } from "@/data/projects";
 import { FadeIn, FadeInStagger } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
+import { ProjectCard } from "@/components/cards/project-card";
 
 export default function ProjectsPage() {
   const [activeTech, setActiveTech] = useState<string>("All");
 
   const technologies = useMemo(() => {
     const techSet = new Set<string>();
-    projects.forEach(p => p.technologies.forEach(t => techSet.add(t)));
+    projects.forEach((p) => p.technologies.forEach((t) => techSet.add(t)));
     return ["All", ...Array.from(techSet).sort()];
   }, []);
 
   const filteredProjects = useMemo(() => {
     if (activeTech === "All") return projects;
-    return projects.filter(p => p.technologies.includes(activeTech));
+    return projects.filter((p) => p.technologies.includes(activeTech));
   }, [activeTech]);
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 bg-background">
       <div className="max-w-screen-lg mx-auto">
         <FadeIn direction="up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground" style={{ fontFamily: "var(--font-heading)" }}>
+          <h1
+            className="text-4xl md:text-5xl font-bold mb-6 text-foreground"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
             All Projects
           </h1>
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
-            A complete collection of the applications and systems I&apos;ve built, exploring different architectures and technologies.
+            A complete collection of the applications and systems I&apos;ve
+            built, exploring different architectures and technologies.
           </p>
         </FadeIn>
 
@@ -52,13 +56,20 @@ export default function ProjectsPage() {
         {filteredProjects.length > 0 ? (
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {filteredProjects.map((project, i) => (
-                <FadeIn key={project.title + i} delay={0.05} direction="up" className="h-full">
-                  <ProjectCard {...project} />
-                </FadeIn>
+              <FadeIn
+                key={project.title + i}
+                delay={0.05}
+                direction="up"
+                className="h-full"
+              >
+                <ProjectCard {...project} />
+              </FadeIn>
             ))}
           </FadeInStagger>
         ) : (
-          <p className="text-muted-foreground text-center py-10 w-full">No projects found for this technology.</p>
+          <p className="text-muted-foreground text-center py-10 w-full">
+            No projects found for this technology.
+          </p>
         )}
       </div>
     </div>

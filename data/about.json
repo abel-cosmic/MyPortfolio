@@ -1,0 +1,26 @@
+{
+  "profile": {
+    "imageSrc": "/profile.jpg",
+    "imageAlt": "Abel Shibabaw — Full Stack Developer"
+  },
+  "badge": "About Me",
+  "headline": {
+    "before": "The Journey from ",
+    "highlight": "Code",
+    "after": " to Impact"
+  },
+  "paragraphs": [
+    "A dedicated Full-stack Software Engineer passionate about turning complex problems into scalable, elegant solutions. I thrive at the intersection of technology and tangible impact.",
+    {
+      "before": "Currently driving digital transformation as a Fullstack Engineer at ",
+      "company": "Safaricom Telecommunication PLC",
+      "after": ", building robust enterprise infrastructure that powers connection."
+    }
+  ],
+  "stats": [
+    { "value": 3, "suffix": "+", "label": "Years of experience" },
+    { "value": 20, "suffix": "+", "label": "Projects delivered" },
+    { "value": 8, "suffix": "+", "label": "Companies worked with" },
+    { "value": 0, "suffix": "∞", "label": "Lines of code written", "displayInfinity": true }
+  ]
+}

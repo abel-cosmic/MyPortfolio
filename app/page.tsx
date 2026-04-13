@@ -1,9 +1,9 @@
-import About from "@/components/about";
-import Education from "@/components/education";
-import Experience from "@/components/experience";
-import Hero from "@/components/hero";
-import Projects from "@/components/projects";
-import Skills from "@/components/skills";
+import About from "@/layouts/about";
+import Education from "@/layouts/education";
+import Experience from "@/layouts/experience";
+import Hero from "@/layouts/hero";
+import Projects from "@/layouts/projects";
+import Skills from "@/layouts/skills";
 import { FloatingNav } from "@/components/ui/floating-nav";
 
 export default function Home() {
