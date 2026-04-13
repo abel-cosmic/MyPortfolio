@@ -1,57 +1,53 @@
-# Beautiful Portfolio Template
+# Abel Shibabaw — Portfolio
 
-A modern and responsive portfolio template built with Next.js, Tailwind CSS, and Shadcn UI, and Shadcn UI Blocks.
+Personal portfolio site for a senior full-stack developer: projects, experience, education, skills, and contact—built as a fast, SEO-friendly Next.js app with a polished UI and motion.
 
-## Demo
+## Live site
 
-[Live Demo](https://shadcn-portfolio-template.vercel.app/)
+[https://abels-porfolio.vercel.app](https://abels-porfolio.vercel.app)
 
-## Preview
+## Tech stack
 
-![Preview](./public/preview.png)
+- [Next.js](https://nextjs.org/) (App Router)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) v4
+- [Framer Motion](https://www.framer.com/motion/) / Motion
+- [GSAP](https://gsap.com/)
+- [Three.js](https://threejs.org/) via [`@react-three/fiber`](https://docs.pmnd.rs/react-three-fiber) and [`@react-three/drei`](https://github.com/pmndrs/drei)
+- UI primitives styled with patterns common to [shadcn/ui](https://ui.shadcn.com/) (Radix primitives, `class-variance-authority`, `tailwind-merge`)
+- [next-themes](https://github.com/pacocoursey/next-themes) for light/dark mode
 
-## Features
+## Local development
 
-- 🎨 Modern and clean design
-- 📱 Fully responsive layout
-- 🎯 Built with Next.js 15
-- 💅 Styled with Tailwind CSS `4.0`
-- 🧩 Built with [Shadcn UI](https://ui.shadcn.com) and [Shadcn UI Blocks](https://shadcnui-blocks.com)
-- 🌙 Dark mode support
-
-## Getting Started
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/akash3444/portfolio-template.git
-cd shadcn-ui-landing-page
-```
-
-2. Install dependencies:
+Install dependencies (this repo includes both `pnpm` and npm lockfiles; either tool works):
 
 ```bash
-npm install
+pnpm install
+# or: npm install
 ```
 
-3. Start the development server:
+Start the dev server (Turbopack):
 
 ```bash
-npm run dev
+pnpm dev
+# or: npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Customization
+Other scripts:
 
-1. Replace the placeholder images with your own content.
-2. Modify the text and styles in the components to match your brand and messaging.
-3. Add your own features and sections as needed.
+```bash
+pnpm build   # production build
+pnpm start   # run production server
+pnpm lint    # ESLint
+```
 
-## Why this template?
+## Customizing content
 
-This project is a base template for a portfolio. It is built with Next.js, Tailwind CSS, Shadcn UI, and Shadcn UI Blocks. It is a great starting point for a portfolio. You can customized the content and media files as per your needs. It is not intended to be a complete solution for a portfolio. It is intended to be a starting point for a portfolio.
+Most copy and structured content live under `data/` as JSON (for example experience, projects, education). Update those files and assets under `public/` (images, icons, Open Graph image) to match your profile. Site metadata and SEO defaults are configured in `app/layout.tsx`.
 
-## Contributing
+## License
 
-If you have any suggestions or improvements, please create an issue or submit a pull request.
+This repository is **private** and intended for personal use. All rights reserved unless you explicitly choose to publish it under a license.
