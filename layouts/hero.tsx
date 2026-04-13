@@ -18,7 +18,7 @@ const {
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent px-4 md:px-6 pt-20 pb-12 md:pt-32 md:pb-16">
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent max-md:bg-background px-4 md:px-6 pt-20 pb-12 md:pt-32 md:pb-16">
       <FadeInStagger className="relative z-[1] flex flex-col items-center text-center gap-6 max-w-4xl w-full">
         {/* Availability chip */}
         <FadeInItem>

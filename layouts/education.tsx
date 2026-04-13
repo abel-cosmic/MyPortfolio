@@ -60,7 +60,7 @@ const Education = () => {
 
             <div className="space-y-6">
               {awardsDetails.map((award, idx) => (
-                <FadeIn key={idx} direction="left" delay={0.2 + idx * 0.1}>
+                <FadeIn key={idx} direction="up" delay={0.2 + idx * 0.1}>
                   <AwardCard award={award} />
                 </FadeIn>
               ))}
