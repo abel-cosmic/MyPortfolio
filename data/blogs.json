@@ -1,0 +1,84 @@
+{
+  "pageTitle": "Writing",
+  "pageDescription": "Longer-form thoughts and updates I share on LinkedIn — copied here so they are easy to browse alongside my work.",
+  "posts": [
+    {
+      "title": "The project that won Better Hack 2025",
+      "excerpt": "Our team took 1st place at Better Hack 2025 ET with the Better Auth Zanzibar Plugin — ReBAC inspired by Google Zanzibar. Short video walkthrough: hierarchical RBAC in a developer-friendly package. Full story, demo, and discussion on LinkedIn.",
+      "image": "/blog/better-hack-npm.png",
+      "publishedAt": "2025-12-08",
+      "linkedinUrl": "https://www.linkedin.com/posts/dagim-tesfaye-no1_betterhack-betterhack2025et-betterauth-activity-7390292838065807360-zbnu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_jE4cBrrXkTbm3PjGuUfRfjP1ABJRr0BE",
+      "topics": [
+        "BetterAuth",
+        "Zanzibar",
+        "ReBAC",
+        "Hackathon",
+        "Access Control",
+        "Open Source",
+        "Team Nexus",
+        "npm"
+      ]
+    },
+    {
+      "title": "We Won 1st Place at BetterHack 2025! Building ReBAC for Better Auth",
+      "excerpt": "🏆 We Won 1st Place at BetterHack 2025! Building ReBAC for Better Auth\n\nSuper excited to share that our team Dagim Tesfaye, Etsegenet Addisu, and I (Abel Shibabaw) won first place at the Better-Hack.io Hackathon 2025! 🎉\nWe took on a challenge that Better Auth hadn't yet solved: bringing ReBAC (Relationship-Based Access Control) to its authorization framework.\n\n🔐 Why it matters:\nWhile Better Auth currently supports RBAC and ABAC, it lacked the ability to make access decisions based on relationships like:\n“User A can edit Folder B because they're part of the same team.”\nThat's where ReBAC, inspired by Google Zanzibar, comes in — enabling dynamic, context-aware, and share-based access models like those used in Google Docs and Drive.\n\n🧩 Our Solution:\nWe built a Zanzibar-style ReBAC plugin for Better Auth that:\nDefines relationship tuples for users, resources, and actions.\nImplements fine-grained access policies using dynamic relationship checks.\nIntegrates seamlessly with Prisma and Better Auth's plugin ecosystem.\n\n🙏 Gratitude:\nNone of this would have been possible without God's guidance, the unwavering support of my friends, and the spirit of not giving up until the very end. Every line of code, every late night, and every small breakthrough was fueled by faith, teamwork, and determination.\n\nA huge thank you to the Better Auth team — especially KinfeMichael Tariku, Mohammed Ibrahim, Fraol Lemecha, Dagmawi Esayas, Temkin Mengistu, Mikiyas Tibebu — for hosting an amazing hackathon and creating such an inspiring space for innovation.\nAnd of course, endless appreciation to my teammates Dagim Tesfaye and Etsegenet Addisu for their creativity, focus, and dedication throughout the journey!",
+      "image": "/blog/better-hack.png",
+      "publishedAt": "2025-11-24",
+      "linkedinUrl": "https://www.linkedin.com/posts/abel-shibabaw-4b3b6125a_betterhack-betterauth-rebac-activity-7381643091499327488-8GS3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_jE4cBrrXkTbm3PjGuUfRfjP1ABJRr0BE",
+      "topics": [
+        "BetterAuth",
+        "Zanzibar",
+        "ReBAC",
+        "Hackathon",
+        "Access Control",
+        "Open Source",
+        "Team Nexus",
+        "npm"
+      ]
+    },
+    {
+      "title": "Introducing the revamped Hope Enterprise University College website!",
+      "excerpt": "About two months ago, I, Dagim Tesfaye, and Mohammed Ibrahim noticed a common issue among university websites: many lacked appealing designs and valuable information. If a university claims to prepare you for the job market, it should reflect that in its online presence, right? So, we took action for my campus! Hope Enterprise University College",
+      "image": "/blog/heuc.png",
+      "publishedAt": "2025-09-24",
+      "linkedinUrl": "https://www.linkedin.com/posts/abel-shibabaw-4b3b6125a_betterhack-betterauth-rebac-activity-7381643091499327488-8GS3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_jE4cBrrXkTbm3PjGuUfRfjP1ABJRr0BE",
+      "topics": ["PayloadCMS", "Frontend", "College", "University", "UI", "UX"]
+    },
+    {
+      "title": "Reflecting on Our Journey at HackathonBrightEthiopia 2024",
+      "excerpt": "Team Trident Technologies, comprising Abel Shibabaw, Mohammed Ibrahim, and Dagim Tesfaye, embarked on a mission to address Ethiopia's challenges in Education and Transportation. Our platform, Edu Bus, aimed to revolutionize school transportation with a comprehensive system.",
+      "image": "/blog/bright.png",
+      "publishedAt": "2024-03-08",
+      "linkedinUrl": "https://www.linkedin.com/posts/abel-shibabaw-4b3b6125a_hackathonbrightethiopia-hackathonbrightethiopia-activity-7172328229876264960-dRWY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_jE4cBrrXkTbm3PjGuUfRfjP1ABJRr0BE",
+      "topics": [
+        "Hackathon",
+        "Education",
+        "Transportation",
+        "Team Trident Technologies",
+        "Chapa",
+        "CodeNight",
+        "Web",
+        "Mobile",
+        "Flutter",
+        "React"
+      ]
+    },
+
+    {
+      "title": "I'm pleased to announce that I and my team managed to get third place in the Kibur College 1st 24hrs hackathon.",
+      "excerpt": "I'm pleased to announce that I and my team managed to get third place in the Kibur College 1st 24hrs hackathon. This was a great experience where we learned our strengths and weaknesses(feeling dizzy until now). I am very grateful to Desalegn Mekuria and Kibur College for making such a great event. I would also love to thank my lecturers and Codenight Community for leveling me up as a developer and boosting my skills to take on such challenges professionally.",
+      "image": "/blog/kibur.png",
+      "publishedAt": "2023-02-21",
+      "linkedinUrl": "https://www.linkedin.com/posts/abel-shibabaw-4b3b6125a_hackathonkiburcollege-hackathonkiburcollege-activity-7172328229876264960-dRWY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_jE4cBrrXkTbm3PjGuUfRfjP1ABJRr0BE",
+      "topics": [
+        "Hackathon",
+        "Kibur College",
+        "Codenight",
+        "Third Place",
+        "Desalegn Mekuria",
+        "Kibur College",
+        "Codenight Community"
+      ]
+    }
+  ]
+}
