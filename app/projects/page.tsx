@@ -54,7 +54,7 @@ export default function ProjectsPage() {
         </FadeIn>
 
         {filteredProjects.length > 0 ? (
-          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <FadeInStagger className="flex flex-col gap-12 md:gap-14 lg:gap-16">
             {filteredProjects.map((project, i) => (
               <FadeIn
                 key={project.title + i}

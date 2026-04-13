@@ -54,8 +54,8 @@ const Projects = () => {
           </div>
         </FadeIn>
 
-        {/* Featured Projects Vertical List */}
-        <div className="flex flex-col gap-8">
+        {/* Featured projects — editorial blocks; extra rhythm between each */}
+        <div className="flex flex-col gap-16 md:gap-20">
           {featuredProjects.map((project, i) => (
             <FadeIn key={i} delay={i * 0.1} direction="up">
               <FeaturedProjectCard {...project} />

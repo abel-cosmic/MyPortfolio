@@ -14,7 +14,7 @@
    ────────────────────────────────────────────── */
 :root {
   /* Warm paper background — Claude's signature tone (60% opacity for layered BG) */
-  --background: rgba(250, 249, 245, 0.8);
+  --background: rgba(250, 249, 245, 0.2);
   --foreground: #1F1E1D;
 
   /* Cards / surfaces — slightly cooler paper */
