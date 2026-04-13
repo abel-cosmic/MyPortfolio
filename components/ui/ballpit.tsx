@@ -595,43 +595,50 @@ function processPointerInteraction() {
 }
 
 function onTouchStart(e: TouchEvent) {
-  if (e.touches.length > 0) {
-    e.preventDefault();
-    pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
-    for (const [elem, data] of pointerMap) {
-      const rect = elem.getBoundingClientRect();
-      if (isInside(rect)) {
-        data.touching = true;
-        updatePointerData(data, rect);
-        if (!data.hover) {
-          data.hover = true;
-          data.onEnter(data);
-        }
-        data.onMove(data);
+  if (e.touches.length === 0) return;
+  pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
+  let startedOnBallpit = false;
+  for (const [elem, data] of pointerMap) {
+    const rect = elem.getBoundingClientRect();
+    if (isInside(rect)) {
+      startedOnBallpit = true;
+      data.touching = true;
+      updatePointerData(data, rect);
+      if (!data.hover) {
+        data.hover = true;
+        data.onEnter(data);
       }
+      data.onMove(data);
     }
   }
+  if (startedOnBallpit) e.preventDefault();
 }
 
 function onTouchMove(e: TouchEvent) {
-  if (e.touches.length > 0) {
-    e.preventDefault();
-    pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
-    for (const [elem, data] of pointerMap) {
-      const rect = elem.getBoundingClientRect();
-      updatePointerData(data, rect);
-      if (isInside(rect)) {
-        if (!data.hover) {
-          data.hover = true;
-          data.touching = true;
-          data.onEnter(data);
-        }
-        data.onMove(data);
-      } else if (data.hover && data.touching) {
-        data.onMove(data);
+  if (e.touches.length === 0) return;
+  pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
+  for (const [elem, data] of pointerMap) {
+    const rect = elem.getBoundingClientRect();
+    updatePointerData(data, rect);
+    if (isInside(rect)) {
+      if (!data.hover) {
+        data.hover = true;
+        data.touching = true;
+        data.onEnter(data);
       }
+      data.onMove(data);
+    } else if (data.hover && data.touching) {
+      data.onMove(data);
     }
   }
+  let blockScroll = false;
+  for (const [, data] of pointerMap) {
+    if (data.touching) {
+      blockScroll = true;
+      break;
+    }
+  }
+  if (blockScroll) e.preventDefault();
 }
 
 function onTouchEnd() {

@@ -2,7 +2,10 @@
 
 import Ballpit from "@/components/ui/ballpit";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
+
+/** Tailwind `md` — skip WebGL on phones / small tablets so the page scrolls normally. */
+const DESKTOP_MEDIA = "(min-width: 768px)";
 
 /** Fallbacks match light theme tokens in app/globals.css */
 const DEFAULT_BALL_COLORS: number[] = [
@@ -27,20 +30,28 @@ function readThemeChartColors(): number[] {
 
 export function BallpitBackground() {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const [ballColors, setBallColors] = useState<number[]>(DEFAULT_BALL_COLORS);
 
-  useEffect(() => {
-    setMounted(true);
+  useLayoutEffect(() => {
+    const mq = window.matchMedia(DESKTOP_MEDIA);
+    const sync = () => setIsDesktop(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
+    if (!isDesktop) return;
     const apply = () => setBallColors(readThemeChartColors());
     apply();
     const id = requestAnimationFrame(apply);
     return () => cancelAnimationFrame(id);
-  }, [mounted, resolvedTheme]);
+  }, [isDesktop, resolvedTheme]);
+
+  if (!isDesktop) {
+    return null;
+  }
 
   return (
     <div
