@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { FadeInItem, FadeInStagger } from "@/components/ui/fade-in";
-import { Spotlight } from "@/components/ui/spotlight";
 import heroData from "@/data/hero.json";
 import { CircleArrowDown } from "lucide-react";
 import Link from "next/link";
@@ -19,14 +18,7 @@ const {
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background px-4 md:px-6 pt-20 pb-12 md:pt-32 md:pb-16">
-      {/* Aceternity Spotlight Effect */}
-      <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="var(--primary)"
-      />
-
-      {/* Main content - Wrapped in Stagger */}
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent px-4 md:px-6 pt-20 pb-12 md:pt-32 md:pb-16">
       <FadeInStagger className="relative z-[1] flex flex-col items-center text-center gap-6 max-w-4xl w-full">
         {/* Availability chip */}
         <FadeInItem>

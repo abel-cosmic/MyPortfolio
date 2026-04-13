@@ -13,8 +13,8 @@
    Claude.ai-inspired Design Tokens — Light Mode
    ────────────────────────────────────────────── */
 :root {
-  /* Warm paper background — Claude's signature tone */
-  --background: #FAF9F5;
+  /* Warm paper background — Claude's signature tone (60% opacity for layered BG) */
+  --background: rgba(250, 249, 245, 0.8);
   --foreground: #1F1E1D;
 
   /* Cards / surfaces — slightly cooler paper */
@@ -93,7 +93,7 @@
    Claude.ai-inspired Design Tokens — Dark Mode
    ────────────────────────────────────────────── */
 .dark {
-  --background: #1E1C19;
+  --background: rgba(30, 28, 25, 0.8);
   --foreground: #E8E6E0;
 
   --card: #252319;

@@ -22,7 +22,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 bg-background">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-md mx-auto">
         <FadeIn direction="up">
           <h1
             className="text-4xl md:text-5xl font-bold mb-6 text-foreground"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NextLink from "next/link";
 import { Calendar } from "lucide-react";
 import { Badge } from "../ui/badge";
 
@@ -14,6 +15,7 @@ export interface ExperienceItemProps {
   image?: string;
   location?: string;
   type?: string;
+  link?: string;
 }
 
 export const ExperienceItem = ({
@@ -26,7 +28,21 @@ export const ExperienceItem = ({
   location,
   type,
   isLast = false,
+  link,
 }: ExperienceItemProps) => {
+  const companyLink =
+    link != null && link !== ""
+      ? {
+          href: link,
+          ...(link.startsWith("http://") || link.startsWith("https://")
+            ? { target: "_blank" as const, rel: "noopener noreferrer" as const }
+            : {}),
+        }
+      : null;
+
+  const employerLinkClassName =
+    "group/employer flex min-w-0 items-start gap-3 rounded-lg -m-1 p-1 outline-offset-2 transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card";
+
   return (
     <div
       className={`cursor-target relative pl-6 border-l-2 border-border group hover:border-primary/50 transition-colors duration-300 ${
@@ -36,39 +52,80 @@ export const ExperienceItem = ({
       <span className="absolute left-[-5px] top-6 h-2 w-2 rounded-full bg-primary ring-4 ring-background group-hover:scale-150 transition-transform duration-300 shadow-[0_0_10px_rgba(var(--primary),0.8)]" />
 
       <div className="-mt-1 rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-[0_0_20px_rgba(var(--primary),0.2)]">
-        <div className="flex items-start gap-3 mb-3">
-          {image ? (
-            <Image
-              src={image}
-              alt={company}
-              width={40}
-              height={40}
-              className="rounded-full object-cover ring-1 ring-border flex-shrink-0 mt-0.5"
-            />
+        <div className="mb-3">
+          {companyLink ? (
+            <NextLink {...companyLink} className={employerLinkClassName}>
+              {image ? (
+                <Image
+                  src={image}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="shrink-0 rounded-full object-cover ring-1 ring-border"
+                  aria-hidden
+                />
+              ) : (
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 ring-1 ring-border">
+                  <span
+                    className="text-sm font-bold uppercase text-primary"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                    aria-hidden
+                  >
+                    {company.charAt(0)}
+                  </span>
+                </div>
+              )}
+              <div className="flex min-w-0 flex-1 flex-col gap-1">
+                <h3
+                  className="text-lg font-bold leading-tight text-foreground transition-colors group-hover/employer:text-primary group-hover:text-primary"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {company}
+                </h3>
+                <p
+                  className="text-sm font-medium leading-snug text-primary"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {title}
+                </p>
+              </div>
+            </NextLink>
           ) : (
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 ring-1 ring-border">
-              <span
-                className="text-primary text-sm font-bold uppercase"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                {company.charAt(0)}
-              </span>
+            <div className="flex items-start gap-3">
+              {image ? (
+                <Image
+                  src={image}
+                  alt={company}
+                  width={40}
+                  height={40}
+                  className="shrink-0 rounded-full object-cover ring-1 ring-border"
+                />
+              ) : (
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 ring-1 ring-border">
+                  <span
+                    className="text-sm font-bold uppercase text-primary"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {company.charAt(0)}
+                  </span>
+                </div>
+              )}
+              <div className="flex min-w-0 flex-1 flex-col gap-1">
+                <h3
+                  className="text-lg font-bold leading-tight text-foreground transition-colors group-hover:text-primary"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {company}
+                </h3>
+                <p
+                  className="text-sm font-medium leading-snug text-primary"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {title}
+                </p>
+              </div>
             </div>
           )}
-          <div className="min-w-0 flex-1">
-            <h3
-              className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              {company}
-            </h3>
-            <p
-              className="text-sm font-medium text-primary"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              {title}
-            </p>
-          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground mb-3">

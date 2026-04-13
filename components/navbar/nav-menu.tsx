@@ -21,7 +21,7 @@ const navLinks = [
 ];
 
 const navLinkClass =
-  "relative inline-flex h-9 w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground focus:outline-none group";
+  "relative inline-flex h-10 w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground focus:outline-none group";
 
 export const NavMenu = ({ className, onLinkClick, ...props }: NavMenuProps) => (
   <NavigationMenu

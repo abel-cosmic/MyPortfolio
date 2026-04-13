@@ -1,4 +1,5 @@
 import Goku from "@/components/ui/goku";
+import { BallpitBackground } from "@/components/ui/ballpit-background";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import StructuredData from "@/layouts/structured-data";
 import type { Metadata, Viewport } from "next";
@@ -172,8 +173,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <StructuredData />
+          <BallpitBackground />
           <Navbar />
-          <main>{children}</main>
+          <main className="relative z-[1]">{children}</main>
           <Goku />
           <Footer />
         </ThemeProvider>

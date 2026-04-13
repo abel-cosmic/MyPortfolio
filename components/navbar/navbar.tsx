@@ -29,8 +29,8 @@ const Navbar = () => {
       className={cn(
         "fixed z-50 inset-x-4 mx-auto transition-all duration-300 ease-in-out",
         isScrolled
-          ? "top-2 h-12 max-w-screen-sm"
-          : "top-4 h-14 max-w-screen-md"
+          ? "top-10 h-14 max-w-screen-sm"
+          : "top-8 h-16 max-w-screen-md"
       )}
     >
       {/* Glass pill — Claude.ai style */}

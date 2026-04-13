@@ -21,6 +21,11 @@
     { "value": 3, "suffix": "+", "label": "Years of experience" },
     { "value": 20, "suffix": "+", "label": "Projects delivered" },
     { "value": 8, "suffix": "+", "label": "Companies worked with" },
-    { "value": 0, "suffix": "∞", "label": "Lines of code written", "displayInfinity": true }
+    {
+      "value": 0,
+      "suffix": "∞",
+      "label": "Lines of code written",
+      "displayInfinity": true
+    }
   ]
 }

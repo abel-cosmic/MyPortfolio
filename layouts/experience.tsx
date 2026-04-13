@@ -1,7 +1,6 @@
 import { ExperienceItem } from "@/components/cards/experience-card";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
-import experienceSection from "@/data/experience-section.json";
 import experiencesData from "@/data/experiences.json";
 import { ArrowRight, Briefcase } from "lucide-react";
 import Link from "next/link";
@@ -15,9 +14,18 @@ export interface Experience {
   technologies: string[];
   location?: string;
   type?: string;
+  link?: string;
 }
 
 export const experiences: Experience[] = experiencesData as Experience[];
+
+const experienceSectionCopy = {
+  sectionLabel: "Experience",
+  heading: "Professional Journey",
+  description:
+    "A timeline of my professional growth and key achievements across companies and roles.",
+  viewAllLabel: "View All Experience",
+} as const;
 
 const Experience = () => {
   const topExperiences = experiences.slice(0, 3);
@@ -36,7 +44,7 @@ const Experience = () => {
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Briefcase className="h-4 w-4 shrink-0" />
-              {experienceSection.sectionLabel}
+              {experienceSectionCopy.sectionLabel}
             </span>
           </div>
         </FadeIn>
@@ -48,10 +56,10 @@ const Experience = () => {
                 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-2"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                {experienceSection.heading}
+                {experienceSectionCopy.heading}
               </h2>
               <p className="text-muted-foreground text-sm md:text-base max-w-lg leading-relaxed">
-                {experienceSection.description}
+                {experienceSectionCopy.description}
               </p>
             </div>
 
@@ -61,7 +69,7 @@ const Experience = () => {
               className="group text-foreground hover:text-primary self-start md:self-end shrink-0 hidden md:inline-flex"
             >
               <Link href="/experience">
-                {experienceSection.viewAllLabel}
+                {experienceSectionCopy.viewAllLabel}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -70,7 +78,11 @@ const Experience = () => {
 
         <div className="space-y-6">
           {topExperiences.map((exp, i) => (
-            <FadeIn key={`${exp.company}-${exp.title}-${i}`} direction="up" delay={i * 0.1}>
+            <FadeIn
+              key={`${exp.company}-${exp.title}-${i}`}
+              direction="up"
+              delay={i * 0.1}
+            >
               <ExperienceItem
                 {...exp}
                 isLast={i === topExperiences.length - 1}
@@ -85,7 +97,7 @@ const Experience = () => {
             asChild
             className="w-full sm:w-auto rounded-full"
           >
-            <Link href="/experience">{experienceSection.viewAllLabel}</Link>
+            <Link href="/experience">{experienceSectionCopy.viewAllLabel}</Link>
           </Button>
         </div>
       </div>

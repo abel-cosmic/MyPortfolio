@@ -29,7 +29,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="border-t border-border bg-card/50 overflow-hidden relative"
+      className="relative z-[1] border-t border-border bg-card overflow-hidden"
     >
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
