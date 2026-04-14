@@ -44,7 +44,7 @@ export const ProjectCard = ({
       <motion.article
         whileHover={{ y: -4 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className="group flex h-full flex-col gap-5 rounded-2xl border border-border bg-card/25 p-4 sm:p-5 md:flex-row md:gap-8 md:items-stretch md:p-6 transition-colors duration-300 hover:border-primary/30"
+        className="cursor-target group flex h-full flex-col gap-5 rounded-2xl border border-border bg-card/25 p-4 sm:p-5 md:flex-row md:gap-8 md:items-stretch md:p-6 transition-colors duration-300 hover:border-primary/30"
       >
         <div className="w-full shrink-0 md:w-[46%] md:max-w-md">
           <button
@@ -84,7 +84,7 @@ export const ProjectCard = ({
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline-offset-4 transition-colors hover:underline"
+                className="cursor-target inline-flex items-center gap-1 text-sm font-semibold text-primary underline-offset-4 transition-colors hover:underline"
               >
                 <ExternalLink className="h-3.5 w-3.5" />
                 Live demo
@@ -96,7 +96,7 @@ export const ProjectCard = ({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                className="cursor-target inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
               >
                 <GithubLogo className="h-3.5 w-3.5" />
                 Code

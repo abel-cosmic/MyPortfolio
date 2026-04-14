@@ -91,7 +91,7 @@ export const FeaturedProjectCard = ({
                     href={githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
+                    className="cursor-target inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
                   >
                     <GithubLogo className="h-4 w-4" />
                     Source
