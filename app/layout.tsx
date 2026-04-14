@@ -153,6 +153,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       style={
         {
           "--font-heading": `${poppins.style.fontFamily}, ui-sans-serif, system-ui, sans-serif`,

@@ -5,11 +5,12 @@ import { useTheme } from "next-themes";
 import { useEffect, useLayoutEffect, useState } from "react";
 
 /** Tailwind `md` — skip WebGL on phones / small tablets so the page scrolls normally. */
-const DESKTOP_MEDIA = "(min-width: 768px)";
+const DESKTOP_MEDIA = "(min-width: 1024px)";
 
 /** Fallbacks match light theme tokens in app/globals.css */
 const DEFAULT_BALL_COLORS: number[] = [
   0xc96442, 0x7c6faf, 0xd4a96a, 0x5c8a6f,
+  0x5c8a6f, 0x5c8a6f, 0x5c8a6f, 0x5c8a6f,
 ];
 
 function readThemeChartColors(): number[] {
@@ -24,6 +25,10 @@ function readThemeChartColors(): number[] {
     hexVar("--chart-2"),
     hexVar("--chart-3"),
     hexVar("--chart-4"),
+    hexVar("--chart-5"),
+    hexVar("--chart-6"),
+    hexVar("--chart-7"),
+    hexVar("--chart-8"),
   ].filter((n): n is number => n !== null);
   return next.length >= 2 ? next : DEFAULT_BALL_COLORS;
 }
@@ -33,7 +38,7 @@ export function BallpitBackground() {
   const [isDesktop, setIsDesktop] = useState(false);
   const [ballColors, setBallColors] = useState<number[]>(DEFAULT_BALL_COLORS);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const mq = window.matchMedia(DESKTOP_MEDIA);
     const sync = () => setIsDesktop(mq.matches);
     sync();
@@ -60,9 +65,9 @@ export function BallpitBackground() {
     >
       <Ballpit
         count={100}
-        gravity={0.01}
-        friction={0.9975}
-        wallBounce={0.95}
+        gravity={0.005}
+        friction={0.999}
+        wallBounce={0.99}
         followCursor={false}
         colors={ballColors}
       />

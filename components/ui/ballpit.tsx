@@ -64,7 +64,7 @@ class X {
   maxPixelRatio?: number;
   minPixelRatio?: number;
   scene!: Scene;
-  renderer!: WebGLRenderer;
+  renderer?: WebGLRenderer;
   size: SizeData = {
     width: 0,
     height: 0,
@@ -75,9 +75,9 @@ class X {
   };
 
   render: () => void = this.#render.bind(this);
-  onBeforeRender: (state: { elapsed: number; delta: number }) => void = () => {};
-  onAfterRender: (state: { elapsed: number; delta: number }) => void = () => {};
-  onAfterResize: (size: SizeData) => void = () => {};
+  onBeforeRender: (state: { elapsed: number; delta: number }) => void = () => { };
+  onAfterRender: (state: { elapsed: number; delta: number }) => void = () => { };
+  onAfterResize: (size: SizeData) => void = () => { };
   isDisposed: boolean = false;
 
   constructor(config: XConfig) {
@@ -114,11 +114,18 @@ class X {
     this.canvas!.style.display = 'block';
     const rendererOptions: WebGLRendererParameters = {
       canvas: this.canvas,
+      antialias: true,
+      alpha: true,
       powerPreference: 'high-performance',
       ...(this.#config.rendererOptions ?? {})
     };
-    this.renderer = new WebGLRenderer(rendererOptions);
-    this.renderer.outputColorSpace = SRGBColorSpace;
+    
+    try {
+      this.renderer = new WebGLRenderer(rendererOptions);
+      this.renderer.outputColorSpace = SRGBColorSpace;
+    } catch (e) {
+      console.error('Three: Failed to create WebGLRenderer', e);
+    }
   }
 
   #initObservers() {
@@ -197,6 +204,7 @@ class X {
   }
 
   #updateRenderer() {
+    if (!this.renderer) return;
     this.renderer.setSize(this.size.width, this.size.height);
     this.#postprocessing?.setSize(this.size.width, this.size.height);
     let pr = window.devicePixelRatio;
@@ -252,6 +260,7 @@ class X {
   }
 
   #render() {
+    if (!this.renderer) return;
     this.renderer.render(this.scene, this.camera);
   }
 
@@ -276,8 +285,7 @@ class X {
     this.#stopAnimation();
     this.clear();
     this.#postprocessing?.dispose();
-    this.renderer.dispose();
-    this.renderer.forceContextLoss();
+    this.renderer?.dispose();
     this.isDisposed = true;
   }
 
@@ -527,10 +535,10 @@ function createPointerData(options: Partial<PointerData> & { domElement: HTMLEle
     nPosition: new Vector2(),
     hover: false,
     touching: false,
-    onEnter: () => {},
-    onMove: () => {},
-    onClick: () => {},
-    onLeave: () => {},
+    onEnter: () => { },
+    onMove: () => { },
+    onClick: () => { },
+    onLeave: () => { },
     ...options
   };
   if (!pointerMap.has(options.domElement)) {
@@ -595,50 +603,43 @@ function processPointerInteraction() {
 }
 
 function onTouchStart(e: TouchEvent) {
-  if (e.touches.length === 0) return;
-  pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
-  let startedOnBallpit = false;
-  for (const [elem, data] of pointerMap) {
-    const rect = elem.getBoundingClientRect();
-    if (isInside(rect)) {
-      startedOnBallpit = true;
-      data.touching = true;
-      updatePointerData(data, rect);
-      if (!data.hover) {
-        data.hover = true;
-        data.onEnter(data);
+  if (e.touches.length > 0) {
+    e.preventDefault();
+    pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
+    for (const [elem, data] of pointerMap) {
+      const rect = elem.getBoundingClientRect();
+      if (isInside(rect)) {
+        data.touching = true;
+        updatePointerData(data, rect);
+        if (!data.hover) {
+          data.hover = true;
+          data.onEnter(data);
+        }
+        data.onMove(data);
       }
-      data.onMove(data);
     }
   }
-  if (startedOnBallpit) e.preventDefault();
 }
 
 function onTouchMove(e: TouchEvent) {
-  if (e.touches.length === 0) return;
-  pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
-  for (const [elem, data] of pointerMap) {
-    const rect = elem.getBoundingClientRect();
-    updatePointerData(data, rect);
-    if (isInside(rect)) {
-      if (!data.hover) {
-        data.hover = true;
-        data.touching = true;
-        data.onEnter(data);
+  if (e.touches.length > 0) {
+    e.preventDefault();
+    pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
+    for (const [elem, data] of pointerMap) {
+      const rect = elem.getBoundingClientRect();
+      updatePointerData(data, rect);
+      if (isInside(rect)) {
+        if (!data.hover) {
+          data.hover = true;
+          data.touching = true;
+          data.onEnter(data);
+        }
+        data.onMove(data);
+      } else if (data.hover && data.touching) {
+        data.onMove(data);
       }
-      data.onMove(data);
-    } else if (data.hover && data.touching) {
-      data.onMove(data);
     }
   }
-  let blockScroll = false;
-  for (const [, data] of pointerMap) {
-    if (data.touching) {
-      blockScroll = true;
-      break;
-    }
-  }
-  if (blockScroll) e.preventDefault();
 }
 
 function onTouchEnd() {
@@ -691,7 +692,14 @@ class Z extends InstancedMesh {
   ambientLight: AmbientLight | undefined;
   light: PointLight | undefined;
 
-  constructor(renderer: WebGLRenderer, params: Partial<typeof XConfig> = {}) {
+  constructor(renderer?: WebGLRenderer, params: Partial<typeof XConfig> = {}) {
+    if (!renderer) {
+      // @ts-ignore
+      super(new SphereGeometry(), new MeshPhysicalMaterial(), 0);
+      this.config = { ...XConfig, ...params };
+      this.physics = new W(this.config);
+      return;
+    }
     const config = { ...XConfig, ...params };
     const roomEnv = new RoomEnvironment();
     const pmrem = new PMREMGenerator(renderer);
@@ -788,7 +796,9 @@ function createBallpit(canvas: HTMLCanvasElement, config: any = {}): CreateBallp
     rendererOptions: { antialias: true, alpha: true }
   });
   let spheres: Z;
-  threeInstance.renderer.toneMapping = ACESFilmicToneMapping;
+  if (threeInstance.renderer) {
+    threeInstance.renderer.toneMapping = ACESFilmicToneMapping;
+  }
   threeInstance.camera.position.set(0, 0, 20);
   threeInstance.camera.lookAt(0, 0, 0);
   threeInstance.cameraMaxAspect = 1.5;
@@ -825,11 +835,13 @@ function createBallpit(canvas: HTMLCanvasElement, config: any = {}): CreateBallp
     threeInstance.scene.add(spheres);
   }
   threeInstance.onBeforeRender = deltaInfo => {
-    if (!isPaused) spheres.update(deltaInfo);
+    if (!isPaused && spheres) spheres.update(deltaInfo);
   };
   threeInstance.onAfterResize = size => {
-    spheres.config.maxX = size.wWidth / 2;
-    spheres.config.maxY = size.wHeight / 2;
+    if (spheres) {
+      spheres.config.maxX = size.wWidth / 2;
+      spheres.config.maxY = size.wHeight / 2;
+    }
   };
   return {
     three: threeInstance,
