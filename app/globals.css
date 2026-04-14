@@ -2,7 +2,8 @@
 
 @plugin "tailwindcss-animate";
 
-@custom-variant dark (&:is(.dark *));
+/* More compatible dark mode selector for built-in/older browsers */
+@custom-variant dark (.dark &);
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -13,8 +14,8 @@
    Claude.ai-inspired Design Tokens — Light Mode
    ────────────────────────────────────────────── */
 :root {
-  /* Warm paper background — Claude's signature tone (60% opacity for layered BG) */
-  --background: rgba(250, 249, 245, 0.2);
+  /* Warm paper background — Solid color for better browser compatibility */
+  --background: #FAF9F5;
   --foreground: #1F1E1D;
 
   /* Cards / surfaces — slightly cooler paper */
@@ -93,7 +94,8 @@
    Claude.ai-inspired Design Tokens — Dark Mode
    ────────────────────────────────────────────── */
 .dark {
-  --background: rgba(30, 28, 25, 0.8);
+  /* Solid background for dark mode to prevent canvas flickering in mobile browsers */
+  --background: #1E1C19;
   --foreground: #E8E6E0;
 
   --card: #252319;
@@ -216,18 +218,17 @@
 @layer base {
   * {
     @apply border-border outline-ring;
-    transition-property: color, background-color, border-color;
-    transition-duration: 150ms;
-    transition-timing-function: ease;
   }
 
   html {
     scroll-behavior: smooth;
+    @apply bg-background;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
