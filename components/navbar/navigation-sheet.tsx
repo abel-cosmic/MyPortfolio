@@ -28,7 +28,7 @@ export const NavigationSheet = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="rounded-full border-border/50 bg-background backdrop-blur-sm hover:bg-accent h-10 w-10">
+        <Button variant="outline" size="icon" aria-label="Open Menu" className="rounded-full border-border/50 bg-background backdrop-blur-sm hover:bg-accent h-10 w-10">
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
@@ -42,7 +42,7 @@ export const NavigationSheet = () => {
         </div>
 
         <div className="p-8 border-t border-border/10 bg-muted/30">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
             Connect
           </p>
           <div className="flex items-center gap-4">
@@ -52,6 +52,7 @@ export const NavigationSheet = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={label}
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c88665] text-white shadow-lg shadow-[#c88665]/10 hover:scale-105 transition-transform"
               >
                 <Icon className="h-4 w-4" />

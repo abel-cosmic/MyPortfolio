@@ -50,8 +50,6 @@ export function BallpitBackground() {
     if (!isDesktop) return;
     const apply = () => setBallColors(readThemeChartColors());
     apply();
-    const id = requestAnimationFrame(apply);
-    return () => cancelAnimationFrame(id);
   }, [isDesktop, resolvedTheme]);
 
   if (!isDesktop) {

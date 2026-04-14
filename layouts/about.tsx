@@ -60,7 +60,7 @@ const About = () => {
             <FadeInStagger className="space-y-6">
               <FadeInItem>
                 <div className="inline-flex items-center gap-3 mb-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
                     {badge}
                   </span>
                 </div>
@@ -130,7 +130,7 @@ const About = () => {
                     <Counter value={value} suffix={suffix} />
                   )}
                 </span>
-                <span className="text-[10px] text-muted-foreground uppercase tracking-widest text-center font-bold">
+                <span className="text-xs text-muted-foreground uppercase tracking-widest text-center font-bold">
                   {label}
                 </span>
               </div>

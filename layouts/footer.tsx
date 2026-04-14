@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="py-12 md:py-20 border-b border-border/50">
           <FadeInStagger className="flex flex-col md:flex-row gap-12 md:items-end justify-between">
             <FadeInItem className="max-w-sm">
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4 block">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 block">
                 {cta.eyebrow}
               </span>
               <h2
@@ -61,7 +61,7 @@ const Footer = () => {
             <FadeInItem className="flex flex-col gap-4">
               <div className="space-y-4">
                 <div className="group">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                  <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
                     {contact.email.label}
                   </p>
                   <a
@@ -74,7 +74,7 @@ const Footer = () => {
                 </div>
 
                 <div className="group">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                  <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
                     {contact.phone.label}
                   </p>
                   <a
@@ -123,14 +123,14 @@ const Footer = () => {
                 <Link
                   key={title}
                   href={href}
-                  className="cursor-target text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-all duration-300"
+                  className="cursor-target text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-all duration-300"
                 >
                   {title}
                 </Link>
               ))}
             </nav>
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
               {copyrightTemplate.replace(
                 "{{year}}",
                 String(new Date().getFullYear()),

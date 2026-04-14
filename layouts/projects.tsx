@@ -58,7 +58,7 @@ const Projects = () => {
         <div className="flex flex-col gap-16 md:gap-20">
           {featuredProjects.map((project, i) => (
             <FadeIn key={i} delay={i * 0.1} direction="up">
-              <FeaturedProjectCard {...project} />
+              <FeaturedProjectCard {...project} priority={i === 0} />
             </FadeIn>
           ))}
         </div>

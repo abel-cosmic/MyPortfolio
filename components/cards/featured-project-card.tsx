@@ -13,6 +13,7 @@ export const FeaturedProjectCard = ({
   technologies,
   liveUrl,
   githubUrl,
+  priority,
 }: ProjectProps) => {
   return (
     <motion.article
@@ -26,7 +27,7 @@ export const FeaturedProjectCard = ({
       >
         <div className="p-5 sm:p-6 md:p-8 lg:p-10">
           <p
-            className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary md:mb-5"
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary md:mb-5"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Featured
@@ -41,6 +42,7 @@ export const FeaturedProjectCard = ({
                     src={image || "/placeholder.svg"}
                     alt={title}
                     fill
+                    priority={priority}
                     sizes="(max-width: 768px) 100vw, min(768px, 90vw)"
                     className="object-contain object-top transition-transform duration-700 ease-out group-hover:scale-[1.01]"
                   />

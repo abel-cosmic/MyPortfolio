@@ -24,13 +24,13 @@ const Education = () => {
             <FadeIn direction="up">
               <div className="flex items-center gap-3 mb-10">
                 <span className="h-px flex-1 bg-border max-w-[3rem]" />
-                <span
+                <h2
                   className="text-xs font-semibold uppercase tracking-widest text-primary flex items-center gap-2"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   <GraduationCap className="h-4 w-4" />
                   {educationColumnLabel}
-                </span>
+                </h2>
               </div>
             </FadeIn>
 
@@ -48,13 +48,13 @@ const Education = () => {
             <FadeIn direction="up" delay={0.2}>
               <div className="flex items-center gap-3 mb-10">
                 <span className="h-px flex-1 bg-border max-w-[3rem]" />
-                <span
+                <h2
                   className="text-xs font-semibold uppercase tracking-widest text-primary flex items-center gap-2"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   <Award className="h-4 w-4" />
                   {awardsColumnLabel}
-                </span>
+                </h2>
               </div>
             </FadeIn>
 

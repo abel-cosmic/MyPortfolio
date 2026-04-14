@@ -8,6 +8,7 @@ export interface ProjectProps {
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
+  priority?: boolean;
 }
 
 export const projectsSection = {

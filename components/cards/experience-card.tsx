@@ -58,11 +58,10 @@ export const ExperienceItem = ({
               {image ? (
                 <Image
                   src={image}
-                  alt=""
+                  alt={company}
                   width={40}
                   height={40}
                   className="shrink-0 rounded-full object-cover ring-1 ring-border"
-                  aria-hidden
                 />
               ) : (
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 ring-1 ring-border">
