@@ -14,6 +14,7 @@ import { GithubLogo } from "../icons";
 export const ProjectCard = ({
   title,
   description,
+  category,
   image,
   technologies,
   liveUrl,
@@ -58,6 +59,9 @@ export const ProjectCard = ({
 
         <div className="flex min-w-0 flex-1 flex-col justify-center gap-3">
           <div>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary/80 mb-1.5 block">
+              {category}
+            </span>
             <h3
               className="text-lg font-semibold leading-snug text-foreground transition-colors duration-300 group-hover:text-primary md:text-xl"
               style={{ fontFamily: "var(--font-heading)" }}

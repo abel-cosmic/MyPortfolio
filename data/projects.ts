@@ -3,6 +3,7 @@ import projectsData from "./projects.json";
 export interface ProjectProps {
   title: string;
   description: string;
+  category: string;
   image: string;
   technologies: string[];
   liveUrl?: string;

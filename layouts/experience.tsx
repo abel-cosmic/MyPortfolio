@@ -14,6 +14,7 @@ export interface Experience {
   technologies: string[];
   location?: string;
   type?: string;
+  roleType?: string;
   link?: string;
 }
 

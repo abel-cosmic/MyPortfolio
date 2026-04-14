@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Logo } from "../components/navbar/logo";
-import { GithubLogo, LinkedIn, Telegram } from "../components/icons";
+import { GithubLogo, LinkedIn, Telegram, UpworkLogo } from "../components/icons";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/fade-in";
 import footerData from "@/data/footer.json";
 import type { ComponentType, SVGProps } from "react";
@@ -18,6 +18,7 @@ const socialIconMap: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   github: GithubLogo,
   linkedin: LinkedIn,
   telegram: Telegram,
+  upwork: UpworkLogo,
 };
 
 const socialLinks = socialLinksRaw.map((s) => ({
@@ -96,7 +97,7 @@ const Footer = () => {
               <Logo />
             </FadeIn>
 
-            <FadeInStagger className="flex items-center gap-2">
+            <FadeInStagger className="flex items-center gap-4">
               {socialLinks.map(({ label, href, icon: Icon }) => (
                 <FadeInItem key={label}>
                   <Link
@@ -104,9 +105,12 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="cursor-target h-10 w-10 rounded-xl border border-border bg-card/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                    className="cursor-target group relative flex h-14 w-14 items-center justify-center rounded-[22px] transition-all duration-500"
                   >
-                    <Icon className="h-4 w-4 transition-transform group-hover:scale-110" />
+                    {/* Inner circular background with clay color */}
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c88665] text-white  transition-all duration-500 group-hover:scale-110 ">
+                      <Icon className="h-5 w-5" />
+                    </div>
                   </Link>
                 </FadeInItem>
               ))}

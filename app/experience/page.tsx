@@ -1,26 +1,43 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { FadeIn } from "@/components/ui/fade-in";
+import { FadeIn, FadeInStagger } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
 import { ExperienceItem } from "@/components/cards/experience-card";
-import { experiences } from "@/layouts/experience";
+import { experiences, Experience } from "@/layouts/experience";
 
 export default function ExperiencePage() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
-  const filterOptions = useMemo(() => {
-    const types = new Set<string>();
-    experiences.forEach((exp) => {
-      if (exp.type) types.add(exp.type);
-    });
-    return ["All", ...Array.from(types)];
-  }, []);
+  const filterOptions = ["All", "Professional", "Academic"];
 
   const filteredExperiences = useMemo(() => {
     if (activeFilter === "All") return experiences;
-    return experiences.filter((exp) => exp.type === activeFilter);
+    return experiences.filter((exp) => exp.roleType === activeFilter);
   }, [activeFilter]);
+
+  const groupedByYear = useMemo(() => {
+    const groups: Record<string, Experience[]> = {};
+    
+    filteredExperiences.forEach((exp) => {
+      // Extract year from period (e.g., "Dec 2025 – Present" -> "2025")
+      const yearMatch = exp.period.match(/\d{4}/);
+      const year = yearMatch ? yearMatch[0] : "Other";
+      
+      if (!groups[year]) groups[year] = [];
+      groups[year].push(exp);
+    });
+    
+    return groups;
+  }, [filteredExperiences]);
+
+  const sortedYears = useMemo(() => 
+    Object.keys(groupedByYear).sort((a, b) => {
+      if (a === "Other") return 1;
+      if (b === "Other") return -1;
+      return parseInt(b) - parseInt(a);
+    })
+  , [groupedByYear]);
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 bg-background">
@@ -33,18 +50,22 @@ export default function ExperiencePage() {
             Professional Journey
           </h1>
           <p className="text-muted-foreground text-lg mb-12">
-            A comprehensive list of my work history and academic leadership.
+            A chronological timeline of my career milestones, academic leadership, and technical growth.
           </p>
         </FadeIn>
 
         {/* Filter */}
         <FadeIn direction="up" delay={0.1}>
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap gap-2 mb-16">
             {filterOptions.map((option) => (
               <Button
                 key={option}
                 variant={activeFilter === option ? "default" : "outline"}
-                className={`rounded-full transition-all ${activeFilter === option ? "shadow-[0_0_15px_rgba(var(--primary),0.4)]" : "border-border hover:border-primary/50"}`}
+                className={`rounded-full transition-all ${
+                  activeFilter === option
+                    ? "shadow-[0_0_15px_rgba(var(--primary),0.4)]"
+                    : "border-border hover:border-primary/50"
+                }`}
                 onClick={() => setActiveFilter(option)}
                 size="sm"
               >
@@ -54,16 +75,37 @@ export default function ExperiencePage() {
           </div>
         </FadeIn>
 
-        <div className="space-y-6">
-          {filteredExperiences.map((exp, i) => (
-            <FadeIn key={`${exp.company}-${exp.title}-${i}`} direction="up" delay={i * 0.05}>
-              <ExperienceItem
-                {...exp}
-                isLast={i === filteredExperiences.length - 1}
-              />
-            </FadeIn>
-          ))}
-          {filteredExperiences.length === 0 && (
+        <div className="space-y-16">
+          {sortedYears.length > 0 ? (
+            sortedYears.map((year) => (
+              <div key={year} className="relative">
+                <FadeIn direction="up">
+                  <div className="sticky top-24 z-10 mb-8">
+                    <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md">
+                      <span className="text-primary font-bold">{year}</span>
+                    </div>
+                  </div>
+                </FadeIn>
+
+                <div className="space-y-6 ml-4 border-l-2 border-border/40 pl-8">
+                  <FadeInStagger>
+                    {groupedByYear[year].map((exp, i) => (
+                      <FadeIn
+                        key={`${exp.company}-${exp.title}-${i}`}
+                        direction="up"
+                        delay={i * 0.05}
+                      >
+                        <ExperienceItem
+                          {...exp}
+                          isLast={i === groupedByYear[year].length - 1}
+                        />
+                      </FadeIn>
+                    ))}
+                  </FadeInStagger>
+                </div>
+              </div>
+            ))
+          ) : (
             <p className="text-muted-foreground text-center py-10">
               No experiences found for this filter.
             </p>

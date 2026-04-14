@@ -6,6 +6,7 @@
     "company": "Safaricom Telecommunication PLC",
     "location": "Addis Ababa, Ethiopia",
     "type": "On Site · Full time",
+    "roleType": "Professional",
     "period": "Dec 2025 – Present",
     "description": "Hired by Gebeya as a vendor to work in the digital channels team at Safaricom, submitting and working on fullstack in-house projects related to the internet provider infrastructure.",
     "technologies": [
@@ -23,6 +24,7 @@
     "link": "https://www.merkatosphare.com",
     "location": "Ontario, Canada",
     "type": "Remote · Part time",
+    "roleType": "Professional",
     "period": "Oct 2025 – Dec 2025",
     "description": "Worked on the main landing page for Merkatosphare LLC, a startup that helps with e-commerce products under Ethiopia and Eritrea — facilitating product sales, talent hiring, and rental services on their platform.",
     "technologies": ["React.js", "TypeScript", "TailwindCSS", "Next.js"]
@@ -34,6 +36,7 @@
     "company": "Agora",
     "location": "Mississauga, Ontario, Canada",
     "type": "Remote · Part time",
+    "roleType": "Professional",
     "period": "Jun 2025 – Jul 2025",
     "description": "Worked on Lussia — a student-focused chat platform with gamification features to help students ace exams and improve results through question-based scoring and interactive learning.",
     "technologies": [
@@ -51,6 +54,7 @@
     "company": "Nucleus Institute Corp",
     "location": "Vancouver, British Columbia, Canada",
     "type": "Remote · Full time",
+    "roleType": "Professional",
     "period": "Feb 2025 – May 2025",
     "description": "Worked with one of the greatest teams creating an automation studio for pipelines, vector databases, chat interfaces with documents, and synthetic data generation. Used an in-house fine-tuned AI model. Also developed a Medical Assessment App, Meal Planner, and Eido Movie/Music Recommendation app.",
     "technologies": [
@@ -71,6 +75,7 @@
     "link": "https://tridentechnologies.com/",
     "location": "Addis Ababa, Ethiopia",
     "type": "Remote · Full time",
+    "roleType": "Professional",
     "period": "Apr 2024 – Oct 2024",
     "description": "Designed and developed an ERP system for a University College — managing classes, examinations, registration, and school fees — increasing student interactivity by 65%. Also built a Content Management System and landing page hosted on Digital Ocean VPS.",
     "technologies": [
@@ -94,6 +99,7 @@
     "link": "https://www.yeabfuture.com/",
     "location": "Addis Ababa, Ethiopia",
     "type": "Remote · Full time",
+    "roleType": "Professional",
     "period": "Aug 2024 – Dec 2024",
     "description": "Built a multi-tenant Event Management System with dashboards for event holders and employees. Implemented voucher generation for purchased tickets, Pespal and bank payment methods, and event add-ons, activities, and location types.",
     "technologies": [
@@ -113,6 +119,7 @@
     "link": "https://mssethiopia.com/",
     "location": "Addis Ababa, Ethiopia",
     "type": "Remote · Full time",
+    "roleType": "Professional",
     "period": "Aug 2023 – May 2024",
     "description": "Accelerated development of the Digital Mekato e-commerce platform by 45% through smart systems. Implemented user-friendly features for a seamless shopping experience. The platform lists local Ethiopian items and processes payments via Chapa gateway.",
     "technologies": [
@@ -131,6 +138,7 @@
     "company": "Peace Technology",
     "location": "Addis Ababa, Ethiopia",
     "type": "Remote · Part Time",
+    "roleType": "Professional",
     "period": "Nov 2023 – May 2024",
     "description": "Established robust client-server communication addressing security issues for an optimised dashboard. Developed the Ethiochef E-commerce Web Dashboard using Next.js with TypeScript and ShadcnUI. Maintained backend API and payment gateway integrations.",
     "technologies": [
@@ -150,6 +158,7 @@
     "link": "https://www.heuc.edu.et/",
     "location": "Addis Ababa, Ethiopia",
     "type": "Student Life · Academics",
+    "roleType": "Academic",
     "period": "Oct 2021 – Nov 2023",
     "description": "Led the student parliament — Vice President for three semesters, President for one — enhancing student life and communication with university administration. Demonstrated exceptional adaptive leadership while managing full academic and leadership responsibilities.",
     "technologies": [

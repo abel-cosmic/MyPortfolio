@@ -21,6 +21,7 @@ function formatPublishedDate(isoDate: string) {
 export const BlogPostCard = ({
   title,
   excerpt,
+  category,
   image,
   publishedAt,
   linkedinUrl,
@@ -40,7 +41,7 @@ export const BlogPostCard = ({
               className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              LinkedIn
+              {category}
             </p>
             <time
               dateTime={publishedAt}

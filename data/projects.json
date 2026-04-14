@@ -7,6 +7,7 @@
     {
       "title": "Sion Football Academy Website",
       "description": "Official website showcasing the Academy's mission, training programs, gallery, team, and contact info — designed to attract players, partners, and supporters.",
+      "category": "Web",
       "image": "/projects/sion-academy.png",
       "technologies": [
         "Next.js",
@@ -21,6 +22,7 @@
     {
       "title": "Hope Enterprise University College — CMS",
       "description": "Redesigned and implemented the HEUC website using PayloadCMS. Highlights HEUC's vision, mission, objectives, and latest updates with an intuitive interface built on ShadcnUI + TailwindCSS.",
+      "category": "Full-Stack",
       "image": "/projects/heuc.png",
       "technologies": [
         "Next.js",
@@ -35,6 +37,7 @@
     {
       "title": "Prestige Executives Website Redesign Figma",
       "description": "I was assigned to redesign a market and hiring website for a client abroad on USA the previous website lacked alot of UX and UI flow issues so i was make a new redesigned landing page for the whole website and then the redo the whole thing with another developer abroad from product design till figma UI",
+      "category": "Design",
       "image": "/projects/prestigeexecutives.jpg",
       "technologies": [
         "Figma",
@@ -48,6 +51,7 @@
     {
       "title": "Nucleus Institute",
       "description": "Automation studio for pipelines, vector databases, chat interfaces and synthetic data generation powered by an in-house fine-tuned AI model.",
+      "category": "Full-Stack",
       "image": "/projects/nucleusinsititute.png",
       "technologies": [
         "Next.js",
@@ -62,6 +66,7 @@
     {
       "title": "Ethiochef — Recipe Management System",
       "description": "Meal recipe app for 200k+ users with CI/CD pipelines (40% faster releases), Redis optimisations (60% speed boost), and Chapa/ETSwitch payment integrations.",
+      "category": "Full-Stack",
       "image": "/projects/ethiochef.png",
       "technologies": [
         "Next.js",
@@ -77,6 +82,7 @@
     {
       "title": "AFCA Event Management System",
       "description": "website made for AFCA event registration and organization. There are two types of roles in the app, registers and scanners. Registers will register users , verify payment and print badges. Scanner on the other hand will scan badges.",
+      "category": "Full-Stack",
       "image": "/projects/afca.png",
       "technologies": [
         "Tailwind CSS",
@@ -90,6 +96,7 @@
     {
       "title": "Digital Merkato",
       "description": "Admin dashboard with full CRUD operations for an Ethiopian e-commerce platform. Leverages React.js, Tailwind CSS, and Shadcn UI for smooth data management.",
+      "category": "Full-Stack",
       "image": "/projects/digitalmerkato.webp",
       "technologies": [
         "ReactJS",
@@ -103,6 +110,7 @@
     {
       "title": "Chains Charity",
       "description": "A React-based charity website to mobilise support for breaking the cycle of poverty. Features localisation in both Amharic and English.",
+      "category": "Web",
       "image": "/projects/chainscharity.webp",
       "technologies": ["ReactJS", "TypeScript", "TailwindCSS"],
       "liveUrl": "https://chains-charity.vercel.app/"

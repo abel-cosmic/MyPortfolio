@@ -3,6 +3,7 @@ import blogsData from "./blogs.json";
 export interface BlogPostProps {
   title: string;
   excerpt: string;
+  category: string;
   image: string;
   publishedAt: string;
   linkedinUrl: string;
