@@ -22,18 +22,26 @@ const navLinks = [
 ];
 
 const navLinkClass =
-  "relative inline-flex h-10 w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground focus:outline-none group";
+  "relative inline-flex h-12 w-full items-center px-4 py-2 text-base font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:bg-primary/5 rounded-xl group";
 
 export const NavMenu = ({ className, onLinkClick, ...props }: NavMenuProps) => (
   <NavigationMenu
-    className={cn("data-[orientation=vertical]:items-start w-full", className)}
+    className={cn("data-[orientation=vertical]:items-start w-full max-w-none", className)}
     {...props}
   >
-    <NavigationMenuList className="gap-0 space-x-0 w-full data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
+    <NavigationMenuList className="gap-1 space-x-0 w-full data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
       {navLinks.map(({ title, href }) => (
         <NavigationMenuItem key={title} className="w-full md:w-auto mt-1 md:mt-0">
           <NavigationMenuLink asChild>
-            <Link href={href} className={cn(navLinkClass, "data-[orientation=vertical]:justify-start mx-0.5")} onClick={onLinkClick}>
+            <Link 
+              href={href} 
+              className={cn(
+                navLinkClass, 
+                "md:h-10 md:w-auto md:text-sm md:justify-center md:rounded-md",
+                "data-[orientation=vertical]:justify-start"
+              )} 
+              onClick={onLinkClick}
+            >
               {title}
             </Link>
           </NavigationMenuLink>
