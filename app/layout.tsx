@@ -138,10 +138,10 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  colorScheme: "light dark",
+  colorScheme: "dark light",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: dark)", color: "#1E1C19" },
+    { media: "(prefers-color-scheme: light)", color: "#FAF9F5" },
   ],
 };
 
@@ -151,28 +151,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      style={
-        {
-          "--font-heading": `${poppins.style.fontFamily}, ui-sans-serif, system-ui, sans-serif`,
-          "--font-sans": `${lora.style.fontFamily}, ui-serif, Georgia, serif`,
-        } as React.CSSProperties
-      }
-    >
-      <body className={`${lora.variable} ${poppins.variable} antialiased`}>
-        <TargetCursor
-          spinDuration={2}
-          hideDefaultCursor
-          parallaxOn
-          hoverDuration={0.2}
-        />
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${lora.variable} ${poppins.variable} antialiased`}
+        style={
+          {
+            "--font-heading": `${poppins.style.fontFamily}, ui-sans-serif, system-ui, sans-serif`,
+            "--font-sans": `${lora.style.fontFamily}, ui-serif, Georgia, serif`,
+          } as React.CSSProperties
+        }
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
+          enableSystem
+          enableColorScheme
+          storageKey="portfolio-theme"
           disableTransitionOnChange
         >
+          <TargetCursor
+            spinDuration={2}
+            hideDefaultCursor
+            parallaxOn
+            hoverDuration={0.2}
+          />
           <StructuredData />
           <BallpitBackground />
           <Navbar />
