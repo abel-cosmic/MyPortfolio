@@ -62,7 +62,7 @@ export function BallpitBackground() {
       aria-hidden
     >
       <Ballpit
-        count={100}
+        count={50}
         gravity={0.005}
         friction={0.999}
         wallBounce={0.99}
