@@ -5,7 +5,7 @@ import { useState } from "react";
 import Folder from "./Folder";
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/15c9n9088TWLZ_IaRW7ykweaSZjHlZjyL/view?usp=sharing";
+  "https://drive.google.com/file/d/1IaGM_e_q1JAJ89EUtuuulwkvvlqAP-ln/view?usp=sharing";
 
 export const DownloadCV = ({ title }: { title: string }) => {
   const [isFolderHovered, setIsFolderHovered] = useState(false);
